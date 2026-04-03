@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Harvest — Food Delivery Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --olive:#4F622E;--olive-l:#637a3a;--sage:#C3D09A;--sage-l:#dce8bb;
+  --gold:#EABA4A;--gold-l:#f5d07a;--cream:#FEEABC;--off:#F8F9F5;
+  --white:#fff;--ink:#1e2417;--ink2:#3a4228;
+  --muted:#7a8a5a;--muted2:#a8b88a;
+  --border:rgba(79,98,46,0.12);--border2:rgba(79,98,46,0.22);
+  --shadow:0 2px 20px rgba(79,98,46,0.10);--shadow-l:0 8px 40px rgba(79,98,46,0.14);
+  --r:16px;--r-sm:10px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--off);color:var(--ink);font-family:'Outfit',sans-serif;font-size:14px;display:flex;min-height:100vh;overflow-x:hidden}
+
+/* ── SIDEBAR ── */
+.sidebar{width:240px;min-height:100vh;background:var(--olive);display:flex;flex-direction:column;position:fixed;left:0;top:0;bottom:0;z-index:200;overflow:hidden}
+.sidebar::before{content:'';position:absolute;bottom:-60px;right:-60px;width:200px;height:200px;background:rgba(195,208,154,0.08);border-radius:50%;pointer-events:none}
+.logo-wrap{padding:28px 24px 22px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--cream);display:flex;align-items:center;gap:8px}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-bottom:2px}
+.logo-sub{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(195,208,154,0.55);margin-top:4px}
+.nav{padding:20px 14px;flex:1}
+.nav-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(195,208,154,0.4);padding:14px 10px 6px;font-weight:500}
+.nav-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:var(--r-sm);cursor:pointer;color:rgba(195,208,154,0.7);font-size:13.5px;font-weight:400;transition:all 0.2s;margin-bottom:2px}
+.nav-item:hover{background:rgba(255,255,255,0.07);color:var(--sage-l)}
+.nav-item.active{background:var(--gold);color:var(--olive);font-weight:600;box-shadow:0 4px 14px rgba(234,186,74,0.35)}
+.nav-item.active .ni{opacity:1}
+.ni{width:17px;height:17px;opacity:0.6;flex-shrink:0}
+.nav-badge{margin-left:auto;background:rgba(234,186,74,0.2);color:var(--gold);font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px}
+.nav-item.active .nav-badge{background:rgba(79,98,46,0.18);color:var(--olive)}
+.sidebar-user{padding:16px;border-top:1px solid rgba(255,255,255,0.08)}
+.user-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.06);border-radius:var(--r-sm);border:1px solid rgba(255,255,255,0.08)}
+.u-av{width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--olive);flex-shrink:0}
+.u-name{font-size:12.5px;color:var(--cream);font-weight:500}
+.u-role{font-size:10px;color:rgba(195,208,154,0.5);margin-top:1px}
+
+/* ── MAIN ── */
+.main{margin-left:240px;flex:1;display:flex;flex-direction:column;min-height:100vh}
+.topbar{height:64px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 32px;gap:16px;position:sticky;top:0;z-index:100}
+.topbar-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink);flex:1}
+.search-wrap{display:flex;align-items:center;gap:8px;background:var(--off);border:1.5px solid var(--border);border-radius:40px;padding:7px 16px;width:240px;transition:all 0.2s}
+.search-wrap:focus-within{border-color:var(--olive);box-shadow:0 0 0 3px rgba(79,98,46,0.08)}
+.search-wrap input{background:none;border:none;outline:none;font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink);width:100%}
+.search-wrap input::placeholder{color:var(--muted2)}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:40px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all 0.2s}
+.btn-primary{background:var(--olive);color:var(--cream)}
+.btn-primary:hover{background:var(--olive-l);box-shadow:0 4px 14px rgba(79,98,46,0.3)}
+.btn-gold{background:var(--gold);color:var(--olive)}
+.btn-gold:hover{background:var(--gold-l);box-shadow:0 4px 14px rgba(234,186,74,0.4)}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--border2)}
+.btn-ghost:hover{background:var(--off);color:var(--ink)}
+.btn-sm{padding:6px 14px;font-size:12px}
+.btn-xs{padding:4px 10px;font-size:11px}
+.btn-danger{background:rgba(180,50,50,0.08);color:#b43232;border:1px solid rgba(180,50,50,0.15)}
+.btn-danger:hover{background:rgba(180,50,50,0.14)}
+
+/* ── PAGES ── */
+.page{display:none;padding:32px;flex-direction:column;gap:28px;animation:fadeUp 0.3s ease}
+.page.active{display:flex}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── LOADING ── */
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px;gap:16px;color:var(--muted)}
+.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--olive);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-box{background:#fef0f0;border:1px solid rgba(180,50,50,0.2);border-radius:var(--r);padding:20px 24px;color:#b43232;font-size:13px;display:flex;align-items:center;gap:10px}
+
+/* ── HERO ── */
+.hero{background:var(--olive);border-radius:var(--r);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(234,186,74,0.18) 0%,transparent 70%);pointer-events:none}
+.hero-text{position:relative;z-index:1;max-width:440px}
+.hero-greeting{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:400;margin-bottom:8px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--cream);line-height:1.1;margin-bottom:12px}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:14px;color:rgba(195,208,154,0.75);line-height:1.6}
+.hero-cta{margin-top:20px;display:flex;gap:10px}
+.hero-stats{display:flex;gap:16px;position:relative;z-index:1}
+.h-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-sm);padding:16px 20px;text-align:center;min-width:90px}
+.h-stat-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--gold);line-height:1}
+.h-stat-l{font-size:11px;color:var(--sage);margin-top:4px}
+.hero-dishes{position:relative;z-index:1;display:flex;gap:10px;align-items:flex-end}
+.hero-dish{width:80px;height:80px;border-radius:var(--r-sm);object-fit:cover;border:3px solid rgba(254,234,188,0.35);box-shadow:0 8px 24px rgba(0,0,0,0.3);transition:transform 0.3s}
+.hero-dish:hover{transform:scale(1.06) rotate(-2deg)}
+.hero-dish:nth-child(2){transform:translateY(-14px)}
+
+/* ── STAT CARDS ── */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;transition:transform 0.2s,box-shadow 0.2s}
+.sc:hover{transform:translateY(-2px);box-shadow:var(--shadow-l)}
+.sc-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px}
+.sci-o{background:rgba(79,98,46,0.1)}.sci-g{background:rgba(234,186,74,0.15)}.sci-s{background:rgba(195,208,154,0.3)}.sci-c{background:var(--cream)}
+.sc-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.sc-value{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--ink);line-height:1}
+.sc-trend{font-size:12px;color:var(--muted);margin-top:6px}
+.sc-trend.up{color:#4a8a5a}
+
+/* ── SECTION HEADER ── */
+.sh{display:flex;align-items:center;justify-content:space-between}
+.sh-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--ink)}
+.sh-sub{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* ── RESTAURANT CARDS ── */
+.rest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.rest-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;cursor:pointer}
+.rest-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-l)}
+.rest-img-wrap{height:180px;position:relative;overflow:hidden;background:var(--sage-l)}
+.rest-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;display:block}
+.rest-card:hover .rest-img-wrap img{transform:scale(1.05)}
+.rest-badge{position:absolute;top:12px;left:12px;background:var(--olive);color:var(--cream);font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px}
+.rest-rating{position:absolute;top:12px;right:12px;background:rgba(254,234,188,0.95);color:var(--olive);font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px}
+.rest-body{padding:18px 20px 20px}
+.rest-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.rest-city{font-size:12px;color:var(--muted);margin-bottom:10px}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.tag{background:var(--off);border:1px solid var(--border);color:var(--muted);font-size:10px;font-weight:500;padding:3px 9px;border-radius:20px;transition:all 0.15s}
+.tag:hover{background:var(--sage-l);border-color:var(--sage);color:var(--olive)}
+.rest-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+
+/* ── MENU CARDS ── */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.menu-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform 0.2s,box-shadow 0.2s}
+.menu-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-l)}
+.menu-img-wrap{height:155px;overflow:hidden;position:relative;background:var(--cream)}
+.menu-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.35s;display:block}
+.menu-card:hover .menu-img-wrap img{transform:scale(1.06)}
+.menu-avail{position:absolute;bottom:10px;left:10px;font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px}
+.av-yes{background:rgba(74,138,90,0.9);color:#fff}.av-no{background:rgba(180,50,50,0.9);color:#fff}
+.menu-body{padding:14px 16px 16px}
+.menu-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.2}
+.menu-rest{font-size:11px;color:var(--muted);margin-bottom:8px}
+.menu-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.menu-footer{display:flex;align-items:center;justify-content:space-between}
+.menu-price{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--olive)}
+.menu-price span{font-size:12px;font-weight:400;color:var(--muted)}
+
+/* ── TABLES ── */
+.table-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead tr{background:var(--off)}
+th{padding:12px 18px;text-align:left;font-size:10.5px;font-weight:600;color:var(--muted);letter-spacing:1px;text-transform:uppercase;white-space:nowrap;border-bottom:1px solid var(--border)}
+td{padding:14px 18px;font-size:13px;color:var(--ink);border-bottom:1px solid var(--border);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(248,249,245,0.8)}
+
+/* ── BADGES ── */
+.badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.b-green{background:#eef7f1;color:#2d7a4a}.b-olive{background:rgba(79,98,46,0.1);color:var(--olive)}
+.b-gold{background:rgba(234,186,74,0.18);color:#8a6a10}.b-cream{background:var(--cream);color:#8a6a10;border:1px solid rgba(234,186,74,0.3)}
+.b-red{background:#fef0f0;color:#b43232}.b-blue{background:#eef3fb;color:#2d5fa0}
+.b-gray{background:var(--off);color:var(--muted);border:1px solid var(--border)}.b-sage{background:rgba(195,208,154,0.25);color:var(--olive)}
+
+/* ── TABS ── */
+.tab-row{display:flex;gap:4px;background:var(--off);border:1px solid var(--border);border-radius:40px;padding:4px;width:fit-content}
+.tab{padding:7px 18px;font-size:13px;cursor:pointer;color:var(--muted);border-radius:40px;transition:all 0.2s;font-weight:500}
+.tab:hover{color:var(--ink)}
+.tab.active{background:var(--olive);color:var(--cream);box-shadow:0 2px 8px rgba(79,98,46,0.25)}
+
+/* ── MODAL ── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(30,36,23,0.6);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.overlay.open{display:flex}
+.modal{background:var(--white);border-radius:var(--r);padding:32px;width:580px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(30,36,23,0.22);animation:fadeUp 0.25s ease}
+.modal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink)}
+.modal-close{width:32px;height:32px;border-radius:50%;background:var(--off);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);transition:all 0.15s}
+.modal-close:hover{background:var(--cream);color:var(--olive)}
+.modal-ftr{margin-top:24px;display:flex;justify-content:flex-end;gap:10px;padding-top:20px;border-top:1px solid var(--border)}
+
+/* ── FORMS ── */
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg-full{grid-column:span 2}
+label{font-size:12px;font-weight:600;color:var(--ink2);letter-spacing:0.3px}
+input,select,textarea{background:var(--off);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:10px 13px;color:var(--ink);font-family:'Outfit',sans-serif;font-size:13px;outline:none;width:100%;transition:all 0.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--olive);box-shadow:0 0 0 3px rgba(79,98,46,0.09);background:var(--white)}
+select option{background:var(--white)}
+
+/* ── MISC ── */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.flex-c{display:flex;align-items:center;gap:10px}
+.av{width:34px;height:34px;border-radius:50%;background:var(--sage-l);color:var(--olive);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;border:2px solid var(--cream)}
+.rev-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;display:flex;gap:14px;transition:box-shadow 0.2s}
+.rev-card:hover{box-shadow:var(--shadow)}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--olive);color:var(--cream);padding:12px 24px;border-radius:40px;font-size:13px;font-weight:500;opacity:0;transition:all 0.3s;pointer-events:none;z-index:999;box-shadow:0 8px 24px rgba(79,98,46,0.35);white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── DB STATUS ── */
+#db-status{position:fixed;top:12px;right:16px;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;z-index:999;display:flex;align-items:center;gap:6px}
+.db-dot{width:7px;height:7px;border-radius:50%}
+.db-ok{background:#eef7f1;color:#2d7a4a;border:1px solid rgba(45,122,74,0.2)}.db-ok .db-dot{background:#2d7a4a}
+.db-err{background:#fef0f0;color:#b43232;border:1px solid rgba(180,50,50,0.2)}.db-err .db-dot{background:#b43232}
+.db-chk{background:var(--off);color:var(--muted);border:1px solid var(--border)}.db-chk .db-dot{background:var(--muted);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* ── PHOTO MAP (Unsplash IDs per restaurant) ── */
+</style>
+</head>
+<body>
+
+<div id="db-status" class="db-chk"><div class="db-dot"></div>Connecting…</div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="logo-wrap">
+    <div class="logo"><span class="logo-dot"></span>Harvest</div>
+    <div class="logo-sub">Admin Platform</div>
+  </div>
+  <nav class="nav">
+    <div class="nav-label">Overview</div>
+    <div class="nav-item active" onclick="go('dashboard',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><rect x="1" y="1" width="7" height="7" rx="2"/><rect x="10" y="1" width="7" height="7" rx="2"/><rect x="1" y="10" width="7" height="7" rx="2"/><rect x="10" y="10" width="7" height="7" rx="2"/></svg>
+      Dashboard
+    </div>
+    <div class="nav-label">Catalogue</div>
+    <div class="nav-item" onclick="go('restaurants',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><rect x="2" y="8" width="14" height="8" rx="2"/><path d="M1 8l8-6 8 6"/><rect x="7" y="11" width="4" height="5"/></svg>
+      Restaurants <span class="nav-badge" id="nb-rest">—</span>
+    </div>
+    <div class="nav-item" onclick="go('menu',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h12v2H3z"/><path d="M3 8h12v2H3z"/><path d="M3 13h7v2H3z"/></svg>
+      Menu Items <span class="nav-badge" id="nb-menu">—</span>
+    </div>
+    <div class="nav-label">Operations</div>
+    <div class="nav-item" onclick="go('users',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><circle cx="9" cy="6" r="3.5"/><path d="M2 16c0-3.9 3.1-7 7-7s7 3.1 7 7H2z"/></svg>
+      Users <span class="nav-badge" id="nb-users">—</span>
+    </div>
+    <div class="nav-item" onclick="go('orders',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="1" width="14" height="16" rx="2"/><path d="M5 6h8M5 9h8M5 12h5"/></svg>
+      Orders <span class="nav-badge" id="nb-orders">—</span>
+    </div>
+    <div class="nav-item" onclick="go('deliveries',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="5" cy="14" r="2"/><circle cx="13" cy="14" r="2"/><path d="M3 14V7l3-5h5l3 5v7"/><path d="M3 9h12"/></svg>
+      Deliveries
+    </div>
+    <div class="nav-item" onclick="go('payments',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="1" y="4" width="16" height="11" rx="2"/><path d="M1 8h16"/></svg>
+      Payments
+    </div>
+    <div class="nav-item" onclick="go('feedback',this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><path d="M2 2h14v11H10l-4 4v-4H2z"/></svg>
+      Feedback
+    </div>
+  </nav>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="u-av">SC</div>
+      <div><div class="u-name">Susan Campbell</div><div class="u-role">Super Admin</div></div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="topbar">
+    <div class="topbar-title" id="ptitle">Dashboard</div>
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 18 18" fill="none" stroke="#a8b88a" stroke-width="2"><circle cx="8" cy="8" r="5"/><path d="M13 13l3 3"/></svg>
+      <input placeholder="Search restaurants, dishes…" id="gsearch" oninput="doSearch(this.value)"/>
+    </div>
+    <button class="btn btn-gold" onclick="openContextModal()">+ Add New</button>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="page active" id="page-dashboard">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-greeting">Welcome back, Susan</div>
+        <div class="hero-title">Your platform is <em>thriving</em><br>this month.</div>
+        <div class="hero-sub" id="hero-sub">Loading live data from database…</div>
+        <div class="hero-cta">
+          <button class="btn btn-gold" onclick="go('orders',document.querySelectorAll('.nav-item')[5])">View Orders</button>
+          <button class="btn" style="background:rgba(255,255,255,0.1);color:var(--cream);border:1px solid rgba(255,255,255,0.15)" onclick="go('restaurants',document.querySelectorAll('.nav-item')[1])">Browse Restaurants</button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="h-stat-n" id="hs-orders">—</div><div class="h-stat-l">Orders</div></div>
+        <div class="h-stat"><div class="h-stat-n" id="hs-rev">—</div><div class="h-stat-l">Revenue</div></div>
+        <div class="h-stat"><div class="h-stat-n" id="hs-rating">—</div><div class="h-stat-l">Avg Rating</div></div>
+      </div>
+      <div class="hero-dishes">
+        <img class="hero-dish" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop" alt="" onerror="this.style.display='none'"/>
+        <img class="hero-dish" src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=200&h=200&fit=crop" alt="" onerror="this.style.display='none'"/>
+        <img class="hero-dish" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&h=200&fit=crop" alt="" onerror="this.style.display='none'"/>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="sc"><div class="sc-icon sci-o">🍽️</div><div class="sc-label">Total Orders</div><div class="sc-value" id="stat-orders">—</div><div class="sc-trend up">Live from DB</div></div>
+      <div class="sc"><div class="sc-icon sci-g">💰</div><div class="sc-label">Revenue</div><div class="sc-value" id="stat-rev">—</div><div class="sc-trend up">Completed payments</div></div>
+      <div class="sc"><div class="sc-icon sci-s">👤</div><div class="sc-label">Active Users</div><div class="sc-value" id="stat-users">—</div><div class="sc-trend up">All user types</div></div>
+      <div class="sc"><div class="sc-icon sci-c">⭐</div><div class="sc-label">Avg Rating</div><div class="sc-value" id="stat-rating">—</div><div class="sc-trend up">From feedback</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="sh" style="margin-bottom:16px">
+          <div><div class="sh-title">Recent Orders</div><div class="sh-sub">From your database</div></div>
+          <button class="btn btn-ghost btn-sm" onclick="go('orders',document.querySelectorAll('.nav-item')[5])">View all →</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
+            <tbody id="dash-orders-tbody"><tr><td colspan="4" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="sh" style="margin-bottom:16px">
+          <div><div class="sh-title">Top Restaurants</div><div class="sh-sub">By rating</div></div>
+          <button class="btn btn-ghost btn-sm" onclick="go('restaurants',document.querySelectorAll('.nav-item')[1])">View all →</button>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden" id="dash-rest-list">
+          <div style="padding:30px;text-align:center"><div class="spinner" style="margin:0 auto"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTS -->
+  <div class="page" id="page-restaurants">
+    <div class="sh">
+      <div><div class="sh-title">Restaurants</div><div class="sh-sub" id="rest-sub">Loading…</div></div>
+      <button class="btn btn-primary" onclick="openModal('m-add-rest')">+ Add Restaurant</button>
+    </div>
+    <div id="rest-grid" class="rest-grid"><div class="loading"><div class="spinner"></div><span>Loading restaurants from database…</span></div></div>
+  </div>
+
+  <!-- MENU -->
+  <div class="page" id="page-menu">
+    <div class="sh">
+      <div><div class="sh-title">Menu Items</div><div class="sh-sub" id="menu-sub">Loading…</div></div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <select id="menu-filter" onchange="filterMenu(this.value)" style="width:210px;border-radius:40px;padding:9px 14px">
+          <option value="all">All Restaurants</option>
+        </select>
+        <button class="btn btn-primary" onclick="openModal('m-add-menu')">+ Add Item</button>
+      </div>
+    </div>
+    <div id="menu-grid" class="menu-grid"><div class="loading"><div class="spinner"></div><span>Loading menu items from database…</span></div></div>
+  </div>
+
+  <!-- USERS -->
+  <div class="page" id="page-users">
+    <div class="sh">
+      <div><div class="sh-title">User Management</div><div class="sh-sub" id="users-sub">Loading…</div></div>
+      <button class="btn btn-primary" onclick="openModal('m-add-user')">+ Add User</button>
+    </div>
+    <div class="tab-row" id="user-tabs">
+      <div class="tab active" onclick="filterUsers('all',this)">All</div>
+      <div class="tab" onclick="filterUsers('customer',this)">Customers</div>
+      <div class="tab" onclick="filterUsers('driver',this)">Drivers</div>
+      <div class="tab" onclick="filterUsers('admin',this)">Admins</div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Name</th><th>Username</th><th>Email</th><th>Role</th><th>Joined</th><th>Actions</th></tr></thead>
+      <tbody id="users-tbody"><tr><td colspan="7" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+    </table></div>
+  </div>
+
+  <!-- ORDERS -->
+  <div class="page" id="page-orders">
+    <div class="sh"><div><div class="sh-title">Orders</div><div class="sh-sub" id="orders-sub">Loading…</div></div></div>
+    <div class="three-col">
+      <div class="sc"><div class="sc-icon sci-s">✓</div><div class="sc-label">Delivered</div><div class="sc-value" id="o-delivered">—</div></div>
+      <div class="sc"><div class="sc-icon sci-g">⏳</div><div class="sc-label">Active</div><div class="sc-value" id="o-active">—</div></div>
+      <div class="sc"><div class="sc-icon" style="background:#fef0f0">✕</div><div class="sc-label">Cancelled</div><div class="sc-value" id="o-cancelled">—</div></div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>ID</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th><th>Payment</th></tr></thead>
+      <tbody id="orders-tbody"><tr><td colspan="6" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+    </table></div>
+  </div>
+
+  <!-- DELIVERIES -->
+  <div class="page" id="page-deliveries">
+    <div class="sh"><div><div class="sh-title">Deliveries</div><div class="sh-sub" id="deliv-sub">Loading…</div></div></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>ID</th><th>Order</th><th>Driver</th><th>Pickup</th><th>Delivered</th><th>Duration</th><th>Status</th></tr></thead>
+      <tbody id="deliv-tbody"><tr><td colspan="7" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+    </table></div>
+  </div>
+
+  <!-- PAYMENTS -->
+  <div class="page" id="page-payments">
+    <div class="sh"><div><div class="sh-title">Payments</div><div class="sh-sub" id="pay-sub">Loading…</div></div></div>
+    <div class="three-col">
+      <div class="sc"><div class="sc-icon sci-s">💳</div><div class="sc-label">Completed</div><div class="sc-value" id="p-completed">—</div></div>
+      <div class="sc"><div class="sc-icon sci-g">⏳</div><div class="sc-label">Pending</div><div class="sc-value" id="p-pending">—</div></div>
+      <div class="sc"><div class="sc-icon sci-c">↩</div><div class="sc-label">Refunded</div><div class="sc-value" id="p-refunded">—</div></div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>ID</th><th>Order</th><th>Amount</th><th>Method</th><th>Time</th><th>Status</th></tr></thead>
+      <tbody id="pay-tbody"><tr><td colspan="6" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+    </table></div>
+  </div>
+
+  <!-- FEEDBACK -->
+  <div class="page" id="page-feedback">
+    <div class="sh"><div><div class="sh-title">Customer Feedback</div><div class="sh-sub" id="fb-sub">Loading…</div></div></div>
+    <div id="rev-list" style="display:flex;flex-direction:column;gap:12px">
+      <div class="loading"><div class="spinner"></div><span>Loading reviews from database…</span></div>
+    </div>
+  </div>
+</main>
+
+<!-- MODALS -->
+<div class="overlay" id="m-add-rest">
+  <div class="modal">
+    <div class="modal-hdr"><div class="modal-title">Add New Restaurant</div><button class="modal-close" onclick="closeModal('m-add-rest')">×</button></div>
+    <div class="fg-grid">
+      <div class="fg fg-full"><label>Restaurant Name</label><input id="r-name" placeholder="e.g. The Taco Palace"/></div>
+      <div class="fg"><label>City</label><input id="r-city" placeholder="New York"/></div>
+      <div class="fg"><label>Street Name</label><input id="r-street" placeholder="Broadway"/></div>
+      <div class="fg"><label>Street Number</label><input id="r-num" placeholder="42"/></div>
+      <div class="fg"><label>Unit / Suite</label><input id="r-unit" placeholder="Optional"/></div>
+      <div class="fg"><label>Status</label><select id="r-active"><option value="1">Active</option><option value="0">Inactive</option></select></div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-ghost" onclick="closeModal('m-add-rest')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveClose('m-add-rest','Restaurant saved!')">Save Restaurant</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-add-menu">
+  <div class="modal">
+    <div class="modal-hdr"><div class="modal-title">Add Menu Item</div><button class="modal-close" onclick="closeModal('m-add-menu')">×</button></div>
+    <div class="fg-grid">
+      <div class="fg fg-full"><label>Item Name</label><input placeholder="Spicy Chicken Burger"/></div>
+      <div class="fg"><label>Restaurant</label><select id="mi-rest"></select></div>
+      <div class="fg"><label>Price ($)</label><input type="number" step="0.01" placeholder="12.99"/></div>
+      <div class="fg fg-full"><label>Description</label><textarea rows="2" placeholder="Describe the dish…"></textarea></div>
+      <div class="fg"><label>Available</label><select><option>Yes</option><option>No</option></select></div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-ghost" onclick="closeModal('m-add-menu')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveClose('m-add-menu','Menu item saved!')">Save Item</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-add-user">
+  <div class="modal">
+    <div class="modal-hdr"><div class="modal-title">Add New User</div><button class="modal-close" onclick="closeModal('m-add-user')">×</button></div>
+    <div class="fg-grid">
+      <div class="fg"><label>First Name</label><input placeholder="Alice"/></div>
+      <div class="fg"><label>Last Name</label><input placeholder="Johnson"/></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="alice@email.com"/></div>
+      <div class="fg"><label>Username</label><input placeholder="alicej"/></div>
+      <div class="fg"><label>Password</label><input type="password" placeholder="••••••••"/></div>
+      <div class="fg"><label>Role</label><select><option>customer</option><option>driver</option><option>admin</option></select></div>
+      <div class="fg"><label>Phone</label><input placeholder="+1-555-0000"/></div>
+      <div class="fg"><label>City</label><input placeholder="New York"/></div>
+      <div class="fg fg-full"><label>Street Address</label><input placeholder="123 Main St, Apt 4B"/></div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-ghost" onclick="closeModal('m-add-user')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveClose('m-add-user','User saved!')">Save User</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────────
+const API = 'http://localhost:5000/api';  // matches SERVER_PORT=5000 in .env
+
+// ── PHOTO MAP (Unsplash per restaurant name keyword) ──────
+const REST_IMGS = {
+  'burger':    'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=350&fit=crop',
+  'pizza':     'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=350&fit=crop',
+  'sushi':     'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=350&fit=crop',
+  'taco':      'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=350&fit=crop',
+  'pasta':     'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=350&fit=crop',
+  'curry':     'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=350&fit=crop',
+  'bbq':       'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=350&fit=crop',
+  'green':     'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=350&fit=crop',
+  'noodle':    'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=350&fit=crop',
+  'breakfast': 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&h=350&fit=crop',
+  'default':   'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=350&fit=crop',
+};
+const MENU_IMGS = {
+  'burger':     'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=250&fit=crop',
+  'bacon':      'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=250&fit=crop',
+  'veggie':     'https://images.unsplash.com/photo-1550950158-d0d960dff549?w=400&h=250&fit=crop',
+  'fries':      'https://images.unsplash.com/photo-1576107232684-1279f390859f?w=400&h=250&fit=crop',
+  'milkshake':  'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&h=250&fit=crop',
+  'margherita': 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop',
+  'pepperoni':  'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=250&fit=crop',
+  'pizza':      'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop',
+  'salmon':     'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=250&fit=crop',
+  'dragon':     'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=400&h=250&fit=crop',
+  'tuna':       'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=400&h=250&fit=crop',
+  'taco':       'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=250&fit=crop',
+  'burrito':    'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=250&fit=crop',
+  'carbonara':  'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop',
+  'alfredo':    'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=400&h=250&fit=crop',
+  'lasagna':    'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=400&h=250&fit=crop',
+  'butter':     'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=250&fit=crop',
+  'lamb':       'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=250&fit=crop',
+  'biryani':    'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=250&fit=crop',
+  'ribs':       'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=250&fit=crop',
+  'pulled':     'https://images.unsplash.com/photo-1549611016-3a70d82b5040?w=400&h=250&fit=crop',
+  'brisket':    'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=250&fit=crop',
+  'quinoa':     'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop',
+  'caesar':     'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=250&fit=crop',
+  'avocado':    'https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=400&h=250&fit=crop',
+  'pho':        'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=250&fit=crop',
+  'pad':        'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400&h=250&fit=crop',
+  'ramen':      'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=250&fit=crop',
+  'pancake':    'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400&h=250&fit=crop',
+  'eggs':       'https://images.unsplash.com/photo-1608039755401-742074f0548d?w=400&h=250&fit=crop',
+  'omelette':   'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&h=250&fit=crop',
+  'default':    'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop',
+};
+
+function getRestImg(name){
+  const n = name.toLowerCase();
+  for(const [k,v] of Object.entries(REST_IMGS)) if(n.includes(k)) return v;
+  return REST_IMGS.default;
+}
+function getMenuImg(name){
+  const n = name.toLowerCase();
+  for(const [k,v] of Object.entries(MENU_IMGS)) if(n.includes(k)) return v;
+  return MENU_IMGS.default;
+}
+
+// ── HELPERS ───────────────────────────────────────────────
+const ini = s => s.split(' ').map(n=>n[0]).join('').toUpperCase().slice(0,2);
+function stars(n){return Array.from({length:5},(_,i)=>`<span style="color:${i<n?'#EABA4A':'#ddd'};font-size:14px">★</span>`).join('')}
+function sb(s){
+  const m={delivered:'b-green',pending:'b-gray',confirmed:'b-blue',preparing:'b-gold',
+    out_for_delivery:'b-sage',cancelled:'b-red',completed:'b-green',refunded:'b-cream',
+    failed:'b-red',in_transit:'b-sage',assigned:'b-blue',customer:'b-olive',driver:'b-sage',admin:'b-cream'};
+  return`<span class="badge ${m[s]||'b-gray'}">${s.replace(/_/g,' ')}</span>`;
+}
+function fmt(d){return d?new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'—'}
+function fmtTime(d){return d?new Date(d).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}):'—'}
+
+// ── TOAST ─────────────────────────────────────────────────
+function toast(msg,col){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.background=col||'var(--olive)';
+  t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// ── NAV ───────────────────────────────────────────────────
+const PAGE_TITLES={dashboard:'Dashboard',restaurants:'Restaurants',menu:'Menu Items',users:'Users',orders:'Orders',deliveries:'Deliveries',payments:'Payments',feedback:'Feedback'};
+function go(id,el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(el)el.classList.add('active');
+  document.getElementById('ptitle').textContent=PAGE_TITLES[id]||id;
+  // lazy-load page data
+  const loaders={restaurants:loadRests,menu:loadMenu,users:loadUsers,
+    orders:loadOrders,deliveries:loadDeliveries,payments:loadPayments,feedback:loadFeedback};
+  if(loaders[id])loaders[id]();
+}
+function openContextModal(){
+  const p=document.querySelector('.page.active').id.replace('page-','');
+  const m={restaurants:'m-add-rest',menu:'m-add-menu',users:'m-add-user'};
+  openModal(m[p]||'m-add-user');
+}
+function openModal(id){document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function saveClose(id,msg){closeModal(id);toast(msg)}
+document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open')}));
+
+// ── DB STATUS ─────────────────────────────────────────────
+async function checkDB(){
+  try{
+    const r=await fetch(`${API}/ping`);
+    const d=await r.json();
+    const el=document.getElementById('db-status');
+    if(d.status==='connected'){
+      el.className='db-ok';
+      el.innerHTML='<div class="db-dot"></div>Database connected';
+      setTimeout(()=>el.style.display='none',3000);
+    } else throw new Error(d.message);
+  } catch(e){
+    const el=document.getElementById('db-status');
+    el.className='db-err';
+    el.innerHTML='<div class="db-dot"></div>DB offline — check server.py';
+    showOfflineWarning(e.message);
+  }
+}
+
+function showOfflineWarning(msg){
+  const pages=['dashboard','restaurants','menu','users','orders','deliveries','payments','feedback'];
+  pages.forEach(p=>{
+    const page=document.getElementById('page-'+p);
+    if(page){
+      const err=document.createElement('div');
+      err.className='error-box';
+      err.style.margin='0';
+      err.innerHTML=`⚠️ <strong>Cannot reach the backend.</strong> Make sure <code>server.py</code> is running (<code>python server.py</code>) and the database is connected. Error: ${msg}`;
+      page.insertBefore(err,page.children[1]);
+    }
+  });
+}
+
+// ── LOAD: STATS ───────────────────────────────────────────
+async function loadStats(){
+  try{
+    const r=await fetch(`${API}/stats`);
+    const d=await r.json();
+    document.getElementById('hs-orders').textContent  = d.totalOrders   || '—';
+    document.getElementById('hs-rev').textContent     = d.totalRevenue  ? '$'+parseFloat(d.totalRevenue).toFixed(0) : '—';
+    document.getElementById('hs-rating').textContent  = d.avgRating     ? d.avgRating+'★' : '—';
+    document.getElementById('stat-orders').textContent = d.totalOrders  || '—';
+    document.getElementById('stat-rev').textContent    = d.totalRevenue ? '$'+parseFloat(d.totalRevenue).toLocaleString('en-US',{maximumFractionDigits:0}) : '—';
+    document.getElementById('stat-users').textContent  = d.totalUsers   || '—';
+    document.getElementById('stat-rating').textContent = d.avgRating    || '—';
+    document.getElementById('hero-sub').textContent    =
+      `${d.totalOrders} orders · $${parseFloat(d.totalRevenue||0).toFixed(0)} revenue · ${d.totalUsers} users across your platform.`;
+  } catch(e){ console.error('Stats error:',e); }
+}
+
+// ── LOAD: DASHBOARD ORDERS ────────────────────────────────
+async function loadDashOrders(){
+  try{
+    const r=await fetch(`${API}/orders`);
+    const data=await r.json();
+    const recent=data.slice(0,8);
+    document.getElementById('dash-orders-tbody').innerHTML=recent.map(o=>`
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#${o.OrderID}</td>
+      <td><div class="flex-c"><div class="av">${ini(o.CustomerName||'??')}</div>${o.CustomerName||'—'}</div></td>
+      <td style="color:var(--olive);font-weight:600">$${parseFloat(o.TotalPrice).toFixed(2)}</td>
+      <td>${sb(o.Status)}</td>
+    </tr>`).join('');
+  } catch(e){
+    document.getElementById('dash-orders-tbody').innerHTML='<tr><td colspan="4" style="color:#b43232;text-align:center;padding:20px">Failed to load orders</td></tr>';
+  }
+}
+
+// ── LOAD: DASHBOARD RESTAURANTS ───────────────────────────
+async function loadDashRests(){
+  try{
+    const r=await fetch(`${API}/restaurants`);
+    const data=await r.json();
+    const sorted=[...data].sort((a,b)=>b.Rating-a.Rating).slice(0,6);
+    document.getElementById('dash-rest-list').innerHTML=sorted.map((r,i)=>`
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:${i<sorted.length-1?'1px solid var(--border)':'none'}">
+      <img src="${getRestImg(r.Name)}" style="width:38px;height:38px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.background='var(--sage-l)'"/>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.Name}</div>
+        <div style="font-size:11px;color:var(--muted)">${r.City}</div>
+      </div>
+      <div style="color:#8a6a10;font-weight:600;font-size:12px">${r.Rating||'N/A'} ★</div>
+    </div>`).join('');
+  } catch(e){
+    document.getElementById('dash-rest-list').innerHTML='<div style="padding:20px;color:#b43232;font-size:13px">Failed to load restaurants</div>';
+  }
+}
+
+// ── LOAD: RESTAURANTS ─────────────────────────────────────
+let allRests=[];
+async function loadRests(){
+  const grid=document.getElementById('rest-grid');
+  grid.innerHTML='<div class="loading"><div class="spinner"></div><span>Loading from database…</span></div>';
+  try{
+    const r=await fetch(`${API}/restaurants`);
+    allRests=await r.json();
+    document.getElementById('rest-sub').textContent=`${allRests.length} restaurants in your database`;
+    document.getElementById('nb-rest').textContent=allRests.length;
+    // populate restaurant filter in menu modal
+    const sel=document.getElementById('mi-rest');
+    sel.innerHTML=allRests.map(r=>`<option value="${r.RestaurantID}">${r.Name}</option>`).join('');
+    renderRests(allRests);
+  } catch(e){
+    grid.innerHTML=`<div class="error-box">⚠️ Could not load restaurants: ${e.message}</div>`;
+  }
+}
+function renderRests(data){
+  document.getElementById('rest-grid').innerHTML=data.map(r=>`
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="${getRestImg(r.Name)}" alt="${r.Name}" loading="lazy" onerror="this.parentElement.style.background='var(--sage-l)'"/>
+      <div class="rest-badge">${(r.Cuisines||'').split(',')[0]||'Restaurant'}</div>
+      <div class="rest-rating">★ ${r.Rating||'—'}</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">${r.Name}</div>
+      <div class="rest-city">📍 ${r.City}</div>
+      <div class="tag-row">${(r.Cuisines||'').split(',').filter(Boolean).map(c=>`<span class="tag">${c.trim()}</span>`).join('')}</div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">${r.OrderCount||0}</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge ${r.IsActive?'b-green':'b-red'}">${r.IsActive?'active':'inactive'}</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast('Editing ${r.Name.replace(/'/g,'`')}…')">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>`).join('');
+}
+
+// ── LOAD: MENU ────────────────────────────────────────────
+let allMenu=[];
+async function loadMenu(){
+  const grid=document.getElementById('menu-grid');
+  grid.innerHTML='<div class="loading"><div class="spinner"></div><span>Loading from database…</span></div>';
+  try{
+    const r=await fetch(`${API}/menu`);
+    allMenu=await r.json();
+    document.getElementById('menu-sub').textContent=`${allMenu.length} items across your restaurants`;
+    document.getElementById('nb-menu').textContent=allMenu.length;
+    // populate filter dropdown
+    const sel=document.getElementById('menu-filter');
+    const rests=[...new Set(allMenu.map(m=>m.RestaurantName))].sort();
+    sel.innerHTML=`<option value="all">All Restaurants</option>`+rests.map(n=>`<option value="${n}">${n}</option>`).join('');
+    renderMenu(allMenu);
+  } catch(e){
+    grid.innerHTML=`<div class="error-box">⚠️ Could not load menu: ${e.message}</div>`;
+  }
+}
+function filterMenu(val){
+  const d=val==='all'?allMenu:allMenu.filter(m=>m.RestaurantName===val);
+  renderMenu(d);
+}
+function renderMenu(data){
+  document.getElementById('menu-grid').innerHTML=data.map(m=>`
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="${getMenuImg(m.Name)}" alt="${m.Name}" loading="lazy" onerror="this.parentElement.style.background='var(--cream)'"/>
+      <span class="menu-avail ${m.IsAvailable?'av-yes':'av-no'}">${m.IsAvailable?'Available':'Unavailable'}</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">${m.Name}</div>
+      <div class="menu-rest">${m.RestaurantName}</div>
+      <div class="menu-desc">${m.Description||'No description provided.'}</div>
+      <div class="menu-footer">
+        <div class="menu-price">$${parseFloat(m.Price).toFixed(2)} <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast('Editing ${m.Name.replace(/'/g,'`')}…')">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast('Item removed','#b43232')">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>`).join('');
+}
+
+// ── LOAD: USERS ───────────────────────────────────────────
+let allUsers=[];
+async function loadUsers(){
+  try{
+    const r=await fetch(`${API}/users`);
+    allUsers=await r.json();
+    document.getElementById('users-sub').textContent=`${allUsers.length} total users`;
+    document.getElementById('nb-users').textContent=allUsers.length;
+    filterUsers('all',document.querySelector('#user-tabs .tab'));
+  } catch(e){
+    document.getElementById('users-tbody').innerHTML=`<tr><td colspan="7" style="color:#b43232;text-align:center;padding:20px">Failed to load users: ${e.message}</td></tr>`;
+  }
+}
+function filterUsers(t,el){
+  document.querySelectorAll('#user-tabs .tab').forEach(x=>x.classList.remove('active'));
+  if(el)el.classList.add('active');
+  const d=t==='all'?allUsers:allUsers.filter(u=>u.UserType===t);
+  document.getElementById('users-tbody').innerHTML=d.length?d.map(u=>`
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#${u.UserID}</td>
+    <td><div class="flex-c"><div class="av">${ini((u.FirstName||'?')+' '+(u.LastName||''))}</div><div style="font-weight:500">${u.FirstName} ${u.LastName}</div></div></td>
+    <td style="color:var(--muted)">@${u.UserName}</td>
+    <td style="color:var(--muted)">${u.Email}</td>
+    <td>${sb(u.UserType)}</td>
+    <td style="color:var(--muted);font-size:12px">${fmt(u.CreatedAt)}</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast('Editing ${u.FirstName}…')">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast('Removed','#b43232')">Remove</button>
+    </div></td>
+  </tr>`).join(''):`<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:30px">No ${t} users found</td></tr>`;
+}
+
+// ── LOAD: ORDERS ──────────────────────────────────────────
+async function loadOrders(){
+  try{
+    const r=await fetch(`${API}/orders`);
+    const data=await r.json();
+    document.getElementById('orders-sub').textContent=`${data.length} total orders`;
+    document.getElementById('nb-orders').textContent=data.length;
+    document.getElementById('o-delivered').textContent=data.filter(o=>o.Status==='delivered').length;
+    document.getElementById('o-active').textContent=data.filter(o=>!['delivered','cancelled'].includes(o.Status)).length;
+    document.getElementById('o-cancelled').textContent=data.filter(o=>o.Status==='cancelled').length;
+    document.getElementById('orders-tbody').innerHTML=data.map(o=>`
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#${o.OrderID}</td>
+      <td><div class="flex-c"><div class="av">${ini(o.CustomerName||'??')}</div>${o.CustomerName||'—'}</div></td>
+      <td style="color:var(--muted);font-size:12px">${fmt(o.OrderDate)}</td>
+      <td style="color:var(--olive);font-weight:600">$${parseFloat(o.TotalPrice).toFixed(2)}</td>
+      <td>${sb(o.Status)}</td>
+      <td>${o.PaymentStatus?sb(o.PaymentStatus):'<span class="badge b-gray">—</span>'}</td>
+    </tr>`).join('');
+  } catch(e){
+    document.getElementById('orders-tbody').innerHTML=`<tr><td colspan="6" style="color:#b43232;text-align:center;padding:20px">Failed to load orders: ${e.message}</td></tr>`;
+  }
+}
+
+// ── LOAD: DELIVERIES ──────────────────────────────────────
+async function loadDeliveries(){
+  try{
+    const r=await fetch(`${API}/deliveries`);
+    const data=await r.json();
+    document.getElementById('deliv-sub').textContent=`${data.length} delivery records`;
+    document.getElementById('deliv-tbody').innerHTML=data.map(d=>`
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#${d.DeliveryID}</td>
+      <td style="color:var(--muted)">#${d.OrderID}</td>
+      <td><div class="flex-c"><div class="av">${ini(d.DriverName||'??')}</div>${d.DriverName||'—'}</div></td>
+      <td style="color:var(--muted);font-size:12px">${fmtTime(d.PickupTime)}</td>
+      <td style="color:var(--muted);font-size:12px">${fmtTime(d.DeliveryTime)}</td>
+      <td style="color:${d.DurationMinutes?'#4a8a5a':'var(--muted)'};font-weight:${d.DurationMinutes?500:400}">${d.DurationMinutes?d.DurationMinutes+' min':'—'}</td>
+      <td>${sb(d.DeliveryStatus)}</td>
+    </tr>`).join('');
+  } catch(e){
+    document.getElementById('deliv-tbody').innerHTML=`<tr><td colspan="7" style="color:#b43232;text-align:center;padding:20px">Failed to load deliveries: ${e.message}</td></tr>`;
+  }
+}
+
+// ── LOAD: PAYMENTS ────────────────────────────────────────
+async function loadPayments(){
+  try{
+    const r=await fetch(`${API}/payments`);
+    const data=await r.json();
+    document.getElementById('pay-sub').textContent=`${data.length} payment records`;
+    document.getElementById('p-completed').textContent=data.filter(p=>p.PaymentStatus==='completed').length;
+    document.getElementById('p-pending').textContent=data.filter(p=>p.PaymentStatus==='pending').length;
+    document.getElementById('p-refunded').textContent=data.filter(p=>p.PaymentStatus==='refunded').length;
+    document.getElementById('pay-tbody').innerHTML=data.map(p=>`
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#${p.PaymentID}</td>
+      <td style="color:var(--muted)">#${p.OrderID}</td>
+      <td style="color:var(--olive);font-weight:600">$${parseFloat(p.Amount).toFixed(2)}</td>
+      <td><span class="badge b-gray">${(p.Method||'').replace(/_/g,' ')}</span></td>
+      <td style="color:var(--muted);font-size:12px">${fmtTime(p.PaymentTime)}</td>
+      <td>${sb(p.PaymentStatus)}</td>
+    </tr>`).join('');
+  } catch(e){
+    document.getElementById('pay-tbody').innerHTML=`<tr><td colspan="6" style="color:#b43232;text-align:center;padding:20px">Failed to load payments: ${e.message}</td></tr>`;
+  }
+}
+
+// ── LOAD: FEEDBACK ────────────────────────────────────────
+async function loadFeedback(){
+  const list=document.getElementById('rev-list');
+  list.innerHTML='<div class="loading"><div class="spinner"></div><span>Loading reviews…</span></div>';
+  try{
+    const r=await fetch(`${API}/feedback`);
+    const data=await r.json();
+    document.getElementById('fb-sub').textContent=`${data.length} reviews from your database`;
+    list.innerHTML=data.map(f=>`
+    <div class="rev-card">
+      <img src="${getRestImg(f.RestaurantName||'')}" style="width:54px;height:54px;border-radius:var(--r-sm);object-fit:cover;flex-shrink:0" onerror="this.style.background='var(--sage-l)'"/>
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+          <div><span style="font-weight:600;font-size:13.5px">${f.CustomerName||'Unknown'}</span><span style="color:var(--muted);font-size:12px;margin-left:8px">on <span style="color:var(--olive)">${f.RestaurantName||'—'}</span></span></div>
+          <div style="display:flex;align-items:center;gap:10px"><div>${stars(f.Rating)}</div><span style="font-size:11px;color:var(--muted)">${fmt(f.FeedbackDate)}</span></div>
+        </div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.6">${f.Comment||'No comment.'}</div>
+      </div>
+    </div>`).join('');
+  } catch(e){
+    list.innerHTML=`<div class="error-box">⚠️ Failed to load feedback: ${e.message}</div>`;
+  }
+}
+
+// ── SEARCH ────────────────────────────────────────────────
+function doSearch(q){
+  const p=document.querySelector('.page.active').id.replace('page-','');
+  if(p==='restaurants'&&allRests.length){
+    const d=q?allRests.filter(r=>r.Name.toLowerCase().includes(q.toLowerCase())||r.City.toLowerCase().includes(q.toLowerCase())):allRests;
+    renderRests(d);
+  }
+  if(p==='menu'&&allMenu.length){
+    const d=q?allMenu.filter(m=>m.Name.toLowerCase().includes(q.toLowerCase())||m.RestaurantName.toLowerCase().includes(q.toLowerCase())):allMenu;
+    renderMenu(d);
+  }
+}
+
+// ── INIT ──────────────────────────────────────────────────
+checkDB();
+loadStats();
+loadDashOrders();
+loadDashRests();
+</script>
+</body>
+</html>
