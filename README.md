@@ -201,6 +201,6 @@ The project includes **27 queries** with formal relational algebra expressions a
 
 ---
 
-## 👤 Author
+## 👤 Authors
 
-**Monika** — Database Systems Course Project, April 2026
+**Monika,Gayane** — Database Systems Course Project, April 2026
