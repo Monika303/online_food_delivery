@@ -110,7 +110,7 @@ The conceptual model was designed in **ERDPlus** following standard ER notation:
 - Underlined → primary key attributes
 - Diamonds → relationships with cardinality and participation constraints
 
-![ER Diagram](docs/erd.png)
+![ER Diagram](ERD.png)
 
 ---
 
