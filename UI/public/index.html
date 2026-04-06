@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Harvest — Food Delivery Platform</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- saved from url=(0022)https://food-delivery-app-dcd4c7h2c8hecrcm.germanywestcentral-01.azurewebsites.net/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Online Food Delivery Platform</title>
+<link href="./Online Food Delivery Platform_files/css2" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -205,50 +205,50 @@ select option{background:var(--white)}
 /* ── PHOTO MAP (Unsplash IDs per restaurant) ── */
 </style>
 </head>
-<body>
+<body data-new-gr-c-s-check-loaded="14.1280.0" data-gr-ext-installed="">
 
-<div id="db-status" class="db-chk"><div class="db-dot"></div>Connecting…</div>
+<div id="db-status" class="db-ok" style="display: none;"><div class="db-dot"></div>Database connected</div>
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="logo-wrap">
-    <div class="logo"><span class="logo-dot"></span>Harvest</div>
-    <div class="logo-sub">Admin Platform</div>
+    <div class="logo"><span class="logo-dot"></span>Food Delivery</div>
+    <div class="logo-sub">Online Platform</div>
   </div>
   <nav class="nav">
     <div class="nav-label">Overview</div>
-    <div class="nav-item active" onclick="go('dashboard',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><rect x="1" y="1" width="7" height="7" rx="2"/><rect x="10" y="1" width="7" height="7" rx="2"/><rect x="1" y="10" width="7" height="7" rx="2"/><rect x="10" y="10" width="7" height="7" rx="2"/></svg>
+    <div class="nav-item active" onclick="go(&#39;dashboard&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><rect x="1" y="1" width="7" height="7" rx="2"></rect><rect x="10" y="1" width="7" height="7" rx="2"></rect><rect x="1" y="10" width="7" height="7" rx="2"></rect><rect x="10" y="10" width="7" height="7" rx="2"></rect></svg>
       Dashboard
     </div>
     <div class="nav-label">Catalogue</div>
-    <div class="nav-item" onclick="go('restaurants',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><rect x="2" y="8" width="14" height="8" rx="2"/><path d="M1 8l8-6 8 6"/><rect x="7" y="11" width="4" height="5"/></svg>
-      Restaurants <span class="nav-badge" id="nb-rest">—</span>
+    <div class="nav-item" onclick="go(&#39;restaurants&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><rect x="2" y="8" width="14" height="8" rx="2"></rect><path d="M1 8l8-6 8 6"></path><rect x="7" y="11" width="4" height="5"></rect></svg>
+      Restaurants <span class="nav-badge" id="nb-rest">10</span>
     </div>
-    <div class="nav-item" onclick="go('menu',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h12v2H3z"/><path d="M3 8h12v2H3z"/><path d="M3 13h7v2H3z"/></svg>
-      Menu Items <span class="nav-badge" id="nb-menu">—</span>
+    <div class="nav-item" onclick="go(&#39;menu&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h12v2H3z"></path><path d="M3 8h12v2H3z"></path><path d="M3 13h7v2H3z"></path></svg>
+      Menu Items <span class="nav-badge" id="nb-menu">50</span>
     </div>
     <div class="nav-label">Operations</div>
-    <div class="nav-item" onclick="go('users',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><circle cx="9" cy="6" r="3.5"/><path d="M2 16c0-3.9 3.1-7 7-7s7 3.1 7 7H2z"/></svg>
-      Users <span class="nav-badge" id="nb-users">—</span>
+    <div class="nav-item" onclick="go(&#39;users&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><circle cx="9" cy="6" r="3.5"></circle><path d="M2 16c0-3.9 3.1-7 7-7s7 3.1 7 7H2z"></path></svg>
+      Users <span class="nav-badge" id="nb-users">45</span>
     </div>
-    <div class="nav-item" onclick="go('orders',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="1" width="14" height="16" rx="2"/><path d="M5 6h8M5 9h8M5 12h5"/></svg>
-      Orders <span class="nav-badge" id="nb-orders">—</span>
+    <div class="nav-item" onclick="go(&#39;orders&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="1" width="14" height="16" rx="2"></rect><path d="M5 6h8M5 9h8M5 12h5"></path></svg>
+      Orders <span class="nav-badge" id="nb-orders">45</span>
     </div>
-    <div class="nav-item" onclick="go('deliveries',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="5" cy="14" r="2"/><circle cx="13" cy="14" r="2"/><path d="M3 14V7l3-5h5l3 5v7"/><path d="M3 9h12"/></svg>
+    <div class="nav-item" onclick="go(&#39;deliveries&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="5" cy="14" r="2"></circle><circle cx="13" cy="14" r="2"></circle><path d="M3 14V7l3-5h5l3 5v7"></path><path d="M3 9h12"></path></svg>
       Deliveries
     </div>
-    <div class="nav-item" onclick="go('payments',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="1" y="4" width="16" height="11" rx="2"/><path d="M1 8h16"/></svg>
+    <div class="nav-item" onclick="go(&#39;payments&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="1" y="4" width="16" height="11" rx="2"></rect><path d="M1 8h16"></path></svg>
       Payments
     </div>
-    <div class="nav-item" onclick="go('feedback',this)">
-      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><path d="M2 2h14v11H10l-4 4v-4H2z"/></svg>
+    <div class="nav-item" onclick="go(&#39;feedback&#39;,this)">
+      <svg class="ni" viewBox="0 0 18 18" fill="currentColor"><path d="M2 2h14v11H10l-4 4v-4H2z"></path></svg>
       Feedback
     </div>
   </nav>
@@ -265,8 +265,8 @@ select option{background:var(--white)}
   <div class="topbar">
     <div class="topbar-title" id="ptitle">Dashboard</div>
     <div class="search-wrap">
-      <svg width="14" height="14" viewBox="0 0 18 18" fill="none" stroke="#a8b88a" stroke-width="2"><circle cx="8" cy="8" r="5"/><path d="M13 13l3 3"/></svg>
-      <input placeholder="Search restaurants, dishes…" id="gsearch" oninput="doSearch(this.value)"/>
+      <svg width="14" height="14" viewBox="0 0 18 18" fill="none" stroke="#a8b88a" stroke-width="2"><circle cx="8" cy="8" r="5"></circle><path d="M13 13l3 3"></path></svg>
+      <input placeholder="Search restaurants, dishes…" id="gsearch" oninput="doSearch(this.value)">
     </div>
     <button class="btn btn-gold" onclick="openContextModal()">+ Add New</button>
   </div>
@@ -277,50 +277,144 @@ select option{background:var(--white)}
       <div class="hero-text">
         <div class="hero-greeting">Welcome back, Susan</div>
         <div class="hero-title">Your platform is <em>thriving</em><br>this month.</div>
-        <div class="hero-sub" id="hero-sub">Loading live data from database…</div>
+        <div class="hero-sub" id="hero-sub">45 orders · $1200 revenue · 45 users across your platform.</div>
         <div class="hero-cta">
-          <button class="btn btn-gold" onclick="go('orders',document.querySelectorAll('.nav-item')[5])">View Orders</button>
-          <button class="btn" style="background:rgba(255,255,255,0.1);color:var(--cream);border:1px solid rgba(255,255,255,0.15)" onclick="go('restaurants',document.querySelectorAll('.nav-item')[1])">Browse Restaurants</button>
+          <button class="btn btn-gold" onclick="go(&#39;orders&#39;,document.querySelectorAll(&#39;.nav-item&#39;)[5])">View Orders</button>
+          <button class="btn" style="background:rgba(255,255,255,0.1);color:var(--cream);border:1px solid rgba(255,255,255,0.15)" onclick="go(&#39;restaurants&#39;,document.querySelectorAll(&#39;.nav-item&#39;)[1])">Browse Restaurants</button>
         </div>
       </div>
       <div class="hero-stats">
-        <div class="h-stat"><div class="h-stat-n" id="hs-orders">—</div><div class="h-stat-l">Orders</div></div>
-        <div class="h-stat"><div class="h-stat-n" id="hs-rev">—</div><div class="h-stat-l">Revenue</div></div>
-        <div class="h-stat"><div class="h-stat-n" id="hs-rating">—</div><div class="h-stat-l">Avg Rating</div></div>
+        <div class="h-stat"><div class="h-stat-n" id="hs-orders">45</div><div class="h-stat-l">Orders</div></div>
+        <div class="h-stat"><div class="h-stat-n" id="hs-rev">$1200</div><div class="h-stat-l">Revenue</div></div>
+        <div class="h-stat"><div class="h-stat-n" id="hs-rating">4.4★</div><div class="h-stat-l">Avg Rating</div></div>
       </div>
       <div class="hero-dishes">
-        <img class="hero-dish" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop" alt="" onerror="this.style.display='none'"/>
-        <img class="hero-dish" src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=200&h=200&fit=crop" alt="" onerror="this.style.display='none'"/>
-        <img class="hero-dish" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&h=200&fit=crop" alt="" onerror="this.style.display='none'"/>
+        <img class="hero-dish" src="./Harvest — Food Delivery Platform_files/photo-1568901346375-23c9450c58cd" alt="" onerror="this.style.display=&#39;none&#39;">
+        <img class="hero-dish" src="./Harvest — Food Delivery Platform_files/photo-1579871494447-9811cf80d66c" alt="" onerror="this.style.display=&#39;none&#39;">
+        <img class="hero-dish" src="./Harvest — Food Delivery Platform_files/photo-1565299624946-b28f40a0ae38" alt="" onerror="this.style.display=&#39;none&#39;">
       </div>
     </div>
     <div class="stats-row">
-      <div class="sc"><div class="sc-icon sci-o">🍽️</div><div class="sc-label">Total Orders</div><div class="sc-value" id="stat-orders">—</div><div class="sc-trend up">Live from DB</div></div>
-      <div class="sc"><div class="sc-icon sci-g">💰</div><div class="sc-label">Revenue</div><div class="sc-value" id="stat-rev">—</div><div class="sc-trend up">Completed payments</div></div>
-      <div class="sc"><div class="sc-icon sci-s">👤</div><div class="sc-label">Active Users</div><div class="sc-value" id="stat-users">—</div><div class="sc-trend up">All user types</div></div>
-      <div class="sc"><div class="sc-icon sci-c">⭐</div><div class="sc-label">Avg Rating</div><div class="sc-value" id="stat-rating">—</div><div class="sc-trend up">From feedback</div></div>
+      <div class="sc"><div class="sc-icon sci-o">🍽️</div><div class="sc-label">Total Orders</div><div class="sc-value" id="stat-orders">45</div><div class="sc-trend up">Live from DB</div></div>
+      <div class="sc"><div class="sc-icon sci-g">💰</div><div class="sc-label">Revenue</div><div class="sc-value" id="stat-rev">$1,200</div><div class="sc-trend up">Completed payments</div></div>
+      <div class="sc"><div class="sc-icon sci-s">👤</div><div class="sc-label">Active Users</div><div class="sc-value" id="stat-users">45</div><div class="sc-trend up">All user types</div></div>
+      <div class="sc"><div class="sc-icon sci-c">⭐</div><div class="sc-label">Avg Rating</div><div class="sc-value" id="stat-rating">4.4</div><div class="sc-trend up">From feedback</div></div>
     </div>
     <div class="two-col">
       <div>
         <div class="sh" style="margin-bottom:16px">
           <div><div class="sh-title">Recent Orders</div><div class="sh-sub">From your database</div></div>
-          <button class="btn btn-ghost btn-sm" onclick="go('orders',document.querySelectorAll('.nav-item')[5])">View all →</button>
+          <button class="btn btn-ghost btn-sm" onclick="go(&#39;orders&#39;,document.querySelectorAll(&#39;.nav-item&#39;)[5])">View all →</button>
         </div>
         <div class="table-wrap">
           <table>
             <thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
-            <tbody id="dash-orders-tbody"><tr><td colspan="4" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+            <tbody id="dash-orders-tbody">
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#45</td>
+      <td><div class="flex-c"><div class="av">CW</div>Carlos Wright</div></td>
+      <td style="color:var(--olive);font-weight:600">$38.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#44</td>
+      <td><div class="flex-c"><div class="av">AH</div>Aaron Hernandez</div></td>
+      <td style="color:var(--olive);font-weight:600">$16.98</td>
+      <td><span class="badge b-red">cancelled</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#43</td>
+      <td><div class="flex-c"><div class="av">YA</div>Yara Allen</div></td>
+      <td style="color:var(--olive);font-weight:600">$21.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#42</td>
+      <td><div class="flex-c"><div class="av">WW</div>Wendy Walker</div></td>
+      <td style="color:var(--olive);font-weight:600">$27.48</td>
+      <td><span class="badge b-green">delivered</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#41</td>
+      <td><div class="flex-c"><div class="av">UL</div>Uma Lewis</div></td>
+      <td style="color:var(--olive);font-weight:600">$33.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#40</td>
+      <td><div class="flex-c"><div class="av">SC</div>Sam Clark</div></td>
+      <td style="color:var(--olive);font-weight:600">$24.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#39</td>
+      <td><div class="flex-c"><div class="av">QM</div>Quinn Martinez</div></td>
+      <td style="color:var(--olive);font-weight:600">$42.97</td>
+      <td><span class="badge b-sage">out for delivery</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#38</td>
+      <td><div class="flex-c"><div class="av">OM</div>Olivia Martin</div></td>
+      <td style="color:var(--olive);font-weight:600">$18.98</td>
+      <td><span class="badge b-gray">pending</span></td>
+    </tr></tbody>
           </table>
         </div>
       </div>
       <div>
         <div class="sh" style="margin-bottom:16px">
           <div><div class="sh-title">Top Restaurants</div><div class="sh-sub">By rating</div></div>
-          <button class="btn btn-ghost btn-sm" onclick="go('restaurants',document.querySelectorAll('.nav-item')[1])">View all →</button>
+          <button class="btn btn-ghost btn-sm" onclick="go(&#39;restaurants&#39;,document.querySelectorAll(&#39;.nav-item&#39;)[1])">View all →</button>
         </div>
         <div class="card" style="padding:0;overflow:hidden" id="dash-rest-list">
-          <div style="padding:30px;text-align:center"><div class="spinner" style="margin:0 auto"></div></div>
-        </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border)">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1579871494447-9811cf80d66c(1)" style="width:38px;height:38px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.background=&#39;var(--sage-l)&#39;">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sushi Sensation</div>
+        <div style="font-size:11px;color:var(--muted)">Chicago</div>
+      </div>
+      <div style="color:#8a6a10;font-weight:600;font-size:12px">4.80 ★</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border)">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1544025162-d76694265947" style="width:38px;height:38px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.background=&#39;var(--sage-l)&#39;">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">BBQ Brothers</div>
+        <div style="font-size:11px;color:var(--muted)">San Antonio</div>
+      </div>
+      <div style="color:#8a6a10;font-weight:600;font-size:12px">4.70 ★</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border)">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1621996346565-e3dbc646d9a9" style="width:38px;height:38px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.background=&#39;var(--sage-l)&#39;">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The Pasta Place</div>
+        <div style="font-size:11px;color:var(--muted)">Phoenix</div>
+      </div>
+      <div style="color:#8a6a10;font-weight:600;font-size:12px">4.60 ★</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border)">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1569718212165-3a8278d5f624" style="width:38px;height:38px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.background=&#39;var(--sage-l)&#39;">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Noodle House</div>
+        <div style="font-size:11px;color:var(--muted)">Dallas</div>
+      </div>
+      <div style="color:#8a6a10;font-weight:600;font-size:12px">4.55 ★</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border)">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1568901346375-23c9450c58cd(1)" style="width:38px;height:38px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.background=&#39;var(--sage-l)&#39;">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The Burger Barn</div>
+        <div style="font-size:11px;color:var(--muted)">New York</div>
+      </div>
+      <div style="color:#8a6a10;font-weight:600;font-size:12px">4.50 ★</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:none">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1512621776951-a57141f2eefd" style="width:38px;height:38px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.background=&#39;var(--sage-l)&#39;">
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Green Garden</div>
+        <div style="font-size:11px;color:var(--muted)">San Diego</div>
+      </div>
+      <div style="color:#8a6a10;font-weight:600;font-size:12px">4.40 ★</div>
+    </div></div>
       </div>
     </div>
   </div>
@@ -328,55 +422,2043 @@ select option{background:var(--white)}
   <!-- RESTAURANTS -->
   <div class="page" id="page-restaurants">
     <div class="sh">
-      <div><div class="sh-title">Restaurants</div><div class="sh-sub" id="rest-sub">Loading…</div></div>
-      <button class="btn btn-primary" onclick="openModal('m-add-rest')">+ Add Restaurant</button>
+      <div><div class="sh-title">Restaurants</div><div class="sh-sub" id="rest-sub">10 restaurants in your database</div></div>
+      <button class="btn btn-primary" onclick="openModal(&#39;m-add-rest&#39;)">+ Add Restaurant</button>
     </div>
-    <div id="rest-grid" class="rest-grid"><div class="loading"><div class="spinner"></div><span>Loading restaurants from database…</span></div></div>
+    <div id="rest-grid" class="rest-grid">
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1579871494447-9811cf80d66c(1)" alt="Sushi Sensation" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">Asian</div>
+      <div class="rest-rating">★ 4.80</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">Sushi Sensation</div>
+      <div class="rest-city">📍 Chicago</div>
+      <div class="tag-row"><span class="tag">Asian</span><span class="tag">Gluten-Free</span><span class="tag">Japanese</span><span class="tag">Seafood</span><span class="tag">Sushi</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">6</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Sushi Sensation…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1544025162-d76694265947" alt="BBQ Brothers" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">American</div>
+      <div class="rest-rating">★ 4.70</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">BBQ Brothers</div>
+      <div class="rest-city">📍 San Antonio</div>
+      <div class="tag-row"><span class="tag">American</span><span class="tag">BBQ</span><span class="tag">Comfort Food</span><span class="tag">Gluten-Free</span><span class="tag">Southern</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">4</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing BBQ Brothers…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1621996346565-e3dbc646d9a9" alt="The Pasta Place" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">European</div>
+      <div class="rest-rating">★ 4.60</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">The Pasta Place</div>
+      <div class="rest-city">📍 Phoenix</div>
+      <div class="tag-row"><span class="tag">European</span><span class="tag">Italian</span><span class="tag">Pasta</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">5</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing The Pasta Place…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1569718212165-3a8278d5f624" alt="Noodle House" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">Asian</div>
+      <div class="rest-rating">★ 4.55</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">Noodle House</div>
+      <div class="rest-city">📍 Dallas</div>
+      <div class="tag-row"><span class="tag">Asian</span><span class="tag">Chinese</span><span class="tag">Noodles</span><span class="tag">Soup</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">4</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Noodle House…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1568901346375-23c9450c58cd(1)" alt="The Burger Barn" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">American</div>
+      <div class="rest-rating">★ 4.50</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">The Burger Barn</div>
+      <div class="rest-city">📍 New York</div>
+      <div class="tag-row"><span class="tag">American</span><span class="tag">Burgers</span><span class="tag">Fast Food</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">7</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing The Burger Barn…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1512621776951-a57141f2eefd" alt="Green Garden" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">Healthy</div>
+      <div class="rest-rating">★ 4.40</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">Green Garden</div>
+      <div class="rest-city">📍 San Diego</div>
+      <div class="tag-row"><span class="tag">Healthy</span><span class="tag">Salads</span><span class="tag">Vegan</span><span class="tag">Vegetarian</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">3</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Green Garden…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1565557623262-b51c2513a641" alt="Curry Corner" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">Asian</div>
+      <div class="rest-rating">★ 4.30</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">Curry Corner</div>
+      <div class="rest-city">📍 Philadelphia</div>
+      <div class="tag-row"><span class="tag">Asian</span><span class="tag">Halal</span><span class="tag">Indian</span><span class="tag">Vegan</span><span class="tag">Vegetarian</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">5</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Curry Corner…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1533089860892-a7c6f0a88666" alt="The Breakfast Club" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">American</div>
+      <div class="rest-rating">★ 4.25</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">The Breakfast Club</div>
+      <div class="rest-city">📍 Seattle</div>
+      <div class="tag-row"><span class="tag">American</span><span class="tag">Breakfast</span><span class="tag">Brunch</span><span class="tag">Cafe</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">4</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing The Breakfast Club…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1565299624946-b28f40a0ae38(1)" alt="Pizza Palace" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">Gluten-Free</div>
+      <div class="rest-rating">★ 4.20</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">Pizza Palace</div>
+      <div class="rest-city">📍 Los Angeles</div>
+      <div class="tag-row"><span class="tag">Gluten-Free</span><span class="tag">Italian</span><span class="tag">Mediterranean</span><span class="tag">Pizza</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">3</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Pizza Palace…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rest-card">
+    <div class="rest-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1565299585323-38d6b0865b47" alt="Taco Town" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--sage-l)&#39;">
+      <div class="rest-badge">Fast Food</div>
+      <div class="rest-rating">★ 4.10</div>
+    </div>
+    <div class="rest-body">
+      <div class="rest-name">Taco Town</div>
+      <div class="rest-city">📍 Houston</div>
+      <div class="tag-row"><span class="tag">Fast Food</span><span class="tag">Mexican</span><span class="tag">Tex-Mex</span></div>
+      <div class="rest-footer">
+        <div style="font-size:12px;color:var(--muted)"><strong style="color:var(--ink)">3</strong> orders</div>
+        <div style="display:flex;gap:6px">
+          <span class="badge b-green">active</span>
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Taco Town…&#39;)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div></div>
   </div>
 
   <!-- MENU -->
   <div class="page" id="page-menu">
     <div class="sh">
-      <div><div class="sh-title">Menu Items</div><div class="sh-sub" id="menu-sub">Loading…</div></div>
+      <div><div class="sh-title">Menu Items</div><div class="sh-sub" id="menu-sub">50 items across your restaurants</div></div>
       <div style="display:flex;gap:10px;align-items:center">
-        <select id="menu-filter" onchange="filterMenu(this.value)" style="width:210px;border-radius:40px;padding:9px 14px">
-          <option value="all">All Restaurants</option>
-        </select>
-        <button class="btn btn-primary" onclick="openModal('m-add-menu')">+ Add Item</button>
+        <select id="menu-filter" onchange="filterMenu(this.value)" style="width:210px;border-radius:40px;padding:9px 14px"><option value="all">All Restaurants</option><option value="BBQ Brothers">BBQ Brothers</option><option value="Curry Corner">Curry Corner</option><option value="Green Garden">Green Garden</option><option value="Noodle House">Noodle House</option><option value="Pizza Palace">Pizza Palace</option><option value="Sushi Sensation">Sushi Sensation</option><option value="Taco Town">Taco Town</option><option value="The Breakfast Club">The Breakfast Club</option><option value="The Burger Barn">The Burger Barn</option><option value="The Pasta Place">The Pasta Place</option></select>
+        <button class="btn btn-primary" onclick="openModal(&#39;m-add-menu&#39;)">+ Add Item</button>
       </div>
     </div>
-    <div id="menu-grid" class="menu-grid"><div class="loading"><div class="spinner"></div><span>Loading menu items from database…</span></div></div>
+    <div id="menu-grid" class="menu-grid">
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP7GWuq8GfzAIj5KuESD9enoQ4ggHWJXdE2mmWlluzAL3idOIG75mulzziQgoOaVBMbVqzuZQjoTA2W9H3YbjYxzREq9tGZ3x_RLC3QxO4&s=10" alt="Banana Pudding" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Banana Pudding</div>
+      <div class="menu-rest">BBQ Brothers</div>
+      <div class="menu-desc">House-made with vanilla wafers</div>
+      <div class="menu-footer">
+        <div class="menu-price">$4.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Banana Pudding…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=300&q=80" alt="Brisket Plate" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Brisket Plate</div>
+      <div class="menu-rest">BBQ Brothers</div>
+      <div class="menu-desc">6oz smoked brisket with two sides</div>
+      <div class="menu-footer">
+        <div class="menu-price">$18.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Brisket Plate…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1544025162-d76694265947(1)" alt="Full Rack Ribs" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Full Rack Ribs</div>
+      <div class="menu-rest">BBQ Brothers</div>
+      <div class="menu-desc">Slow-smoked pork ribs with house BBQ sauce</div>
+      <div class="menu-footer">
+        <div class="menu-price">$24.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Full Rack Ribs…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=300&q=80" alt="Mac and Cheese" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Mac and Cheese</div>
+      <div class="menu-rest">BBQ Brothers</div>
+      <div class="menu-desc">Creamy four-cheese blend</div>
+      <div class="menu-footer">
+        <div class="menu-price">$6.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Mac and Cheese…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1549611016-3a70d82b5040" alt="Pulled Pork Sandwich" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Pulled Pork Sandwich</div>
+      <div class="menu-rest">BBQ Brothers</div>
+      <div class="menu-desc">Brioche bun, coleslaw, pickles</div>
+      <div class="menu-footer">
+        <div class="menu-price">$11.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Pulled Pork Sandwich…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1565557623262-b51c2513a641(1)" alt="Butter Chicken" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Butter Chicken</div>
+      <div class="menu-rest">Curry Corner</div>
+      <div class="menu-desc">Tender chicken in creamy tomato sauce</div>
+      <div class="menu-footer">
+        <div class="menu-price">$14.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Butter Chicken…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=300&q=80" alt="Garlic Naan (x2)" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Garlic Naan (x2)</div>
+      <div class="menu-rest">Curry Corner</div>
+      <div class="menu-desc">Freshly baked leavened bread</div>
+      <div class="menu-footer">
+        <div class="menu-price">$3.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Garlic Naan (x2)…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1603360946369-dc9bb6258143" alt="Lamb Rogan Josh" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Lamb Rogan Josh</div>
+      <div class="menu-rest">Curry Corner</div>
+      <div class="menu-desc">Slow-cooked lamb with Kashmiri spices</div>
+      <div class="menu-footer">
+        <div class="menu-price">$16.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Lamb Rogan Josh…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1545044191-4126ecbd8fbc?auto=format&fit=crop&w=300&q=80" alt="Mango Lassi" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Mango Lassi</div>
+      <div class="menu-rest">Curry Corner</div>
+      <div class="menu-desc">Chilled yogurt mango drink</div>
+      <div class="menu-footer">
+        <div class="menu-price">$3.49 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Mango Lassi…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=300&q=80" alt="Vegetable Biryani" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Vegetable Biryani</div>
+      <div class="menu-rest">Curry Corner</div>
+      <div class="menu-desc">Fragrant basmati with seasonal vegetables</div>
+      <div class="menu-footer">
+        <div class="menu-price">$12.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Vegetable Biryani…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=300&q=80" alt="Acai Bowl" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Acai Bowl</div>
+      <div class="menu-rest">Green Garden</div>
+      <div class="menu-desc">Acai blend, granola, fresh fruit</div>
+      <div class="menu-footer">
+        <div class="menu-price">$10.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Acai Bowl…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1588137378633-dea1336ce1e2" alt="Avocado Toast" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Avocado Toast</div>
+      <div class="menu-rest">Green Garden</div>
+      <div class="menu-desc">Sourdough, smashed avocado, chili flakes</div>
+      <div class="menu-footer">
+        <div class="menu-price">$8.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Avocado Toast…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1550304943-4f24f54ddde9" alt="Caesar Salad" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Caesar Salad</div>
+      <div class="menu-rest">Green Garden</div>
+      <div class="menu-desc">Romaine, parmesan, croutons, caesar dressing</div>
+      <div class="menu-footer">
+        <div class="menu-price">$9.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Caesar Salad…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=300&q=80" alt="Green Smoothie" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Green Smoothie</div>
+      <div class="menu-rest">Green Garden</div>
+      <div class="menu-desc">Spinach, banana, almond milk, chia seeds</div>
+      <div class="menu-footer">
+        <div class="menu-price">$5.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Green Smoothie…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=80" alt="Quinoa Power Bowl" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Quinoa Power Bowl</div>
+      <div class="menu-rest">Green Garden</div>
+      <div class="menu-desc">Quinoa, roasted vegetables, tahini dressing</div>
+      <div class="menu-footer">
+        <div class="menu-price">$12.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Quinoa Power Bowl…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1569718212165-3a8278d5f624(1)" alt="Beef Pho" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Beef Pho</div>
+      <div class="menu-rest">Noodle House</div>
+      <div class="menu-desc">Rich bone broth, rice noodles, herbs</div>
+      <div class="menu-footer">
+        <div class="menu-price">$13.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Beef Pho…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1594266357095-ad4ed444933a?auto=format&fit=crop&w=300&q=80" alt="Bubble Tea" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Bubble Tea</div>
+      <div class="menu-rest">Noodle House</div>
+      <div class="menu-desc">Taro milk tea with tapioca pearls</div>
+      <div class="menu-footer">
+        <div class="menu-price">$4.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Bubble Tea…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1559314809-0d155014e29e" alt="Pad Thai" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Pad Thai</div>
+      <div class="menu-rest">Noodle House</div>
+      <div class="menu-desc">Rice noodles, shrimp, bean sprouts, peanuts</div>
+      <div class="menu-footer">
+        <div class="menu-price">$12.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Pad Thai…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1569050467447-ce54b3bbc37d" alt="Ramen" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Ramen</div>
+      <div class="menu-rest">Noodle House</div>
+      <div class="menu-desc">Tonkotsu broth, chashu pork, soft-boiled egg</div>
+      <div class="menu-footer">
+        <div class="menu-price">$14.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Ramen…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Spring Rolls (x4)" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Spring Rolls (x4)</div>
+      <div class="menu-rest">Noodle House</div>
+      <div class="menu-desc">Fresh rice paper with shrimp and herbs</div>
+      <div class="menu-footer">
+        <div class="menu-price">$6.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Spring Rolls (x4)…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1513104890138-7c749659a591" alt="BBQ Chicken Pizza" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">BBQ Chicken Pizza</div>
+      <div class="menu-rest">Pizza Palace</div>
+      <div class="menu-desc">Grilled chicken, BBQ sauce, red onion</div>
+      <div class="menu-footer">
+        <div class="menu-price">$14.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing BBQ Chicken Pizza…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=300&q=80" alt="Garlic Bread" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Garlic Bread</div>
+      <div class="menu-rest">Pizza Palace</div>
+      <div class="menu-desc">Toasted with garlic butter</div>
+      <div class="menu-footer">
+        <div class="menu-price">$4.49 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Garlic Bread…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=300&q=80" alt="Margherita Pizza" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Margherita Pizza</div>
+      <div class="menu-rest">Pizza Palace</div>
+      <div class="menu-desc">Tomato, mozzarella, fresh basil</div>
+      <div class="menu-footer">
+        <div class="menu-price">$11.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Margherita Pizza…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1628840042765-356cda07504e" alt="Pepperoni Pizza" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Pepperoni Pizza</div>
+      <div class="menu-rest">Pizza Palace</div>
+      <div class="menu-desc">Classic pepperoni with mozzarella</div>
+      <div class="menu-footer">
+        <div class="menu-price">$13.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Pepperoni Pizza…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Tiramisu" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Tiramisu</div>
+      <div class="menu-rest">Pizza Palace</div>
+      <div class="menu-desc">Classic Italian dessert</div>
+      <div class="menu-footer">
+        <div class="menu-price">$5.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Tiramisu…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=300&q=80" alt="Dragon Roll" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Dragon Roll</div>
+      <div class="menu-rest">Sushi Sensation</div>
+      <div class="menu-desc">Shrimp tempura, avocado, cucumber</div>
+      <div class="menu-footer">
+        <div class="menu-price">$15.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Dragon Roll…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Edamame" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Edamame</div>
+      <div class="menu-rest">Sushi Sensation</div>
+      <div class="menu-desc">Steamed salted soybeans</div>
+      <div class="menu-footer">
+        <div class="menu-price">$3.49 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Edamame…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Miso Soup" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Miso Soup</div>
+      <div class="menu-rest">Sushi Sensation</div>
+      <div class="menu-desc">Traditional dashi broth with tofu</div>
+      <div class="menu-footer">
+        <div class="menu-price">$2.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Miso Soup…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1579871494447-9811cf80d66c(2)" alt="Salmon Nigiri (x6)" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Salmon Nigiri (x6)</div>
+      <div class="menu-rest">Sushi Sensation</div>
+      <div class="menu-desc">Fresh Atlantic salmon over sushi rice</div>
+      <div class="menu-footer">
+        <div class="menu-price">$12.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Salmon Nigiri (x6)…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?auto=format&fit=crop&w=300&q=80" alt="Tuna Sashimi (x8)" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Tuna Sashimi (x8)</div>
+      <div class="menu-rest">Sushi Sensation</div>
+      <div class="menu-desc">Premium bluefin tuna slices</div>
+      <div class="menu-footer">
+        <div class="menu-price">$16.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Tuna Sashimi (x8)…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1626700051175-6818013e1d4f" alt="Burrito Bowl" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Burrito Bowl</div>
+      <div class="menu-rest">Taco Town</div>
+      <div class="menu-desc">Rice, beans, pico de gallo, sour cream</div>
+      <div class="menu-footer">
+        <div class="menu-price">$10.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Burrito Bowl…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Churros" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Churros</div>
+      <div class="menu-rest">Taco Town</div>
+      <div class="menu-desc">Fried dough with cinnamon sugar and dipping sauce</div>
+      <div class="menu-footer">
+        <div class="menu-price">$4.49 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Churros…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Nachos Grande" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Nachos Grande</div>
+      <div class="menu-rest">Taco Town</div>
+      <div class="menu-desc">Chips, cheese, guacamole, jalapeños</div>
+      <div class="menu-footer">
+        <div class="menu-price">$11.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Nachos Grande…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Quesadilla" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Quesadilla</div>
+      <div class="menu-rest">Taco Town</div>
+      <div class="menu-desc">Flour tortilla, cheese, grilled chicken</div>
+      <div class="menu-footer">
+        <div class="menu-price">$8.49 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Quesadilla…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1565299585323-38d6b0865b47(1)" alt="Street Tacos (x3)" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Street Tacos (x3)</div>
+      <div class="menu-rest">Taco Town</div>
+      <div class="menu-desc">Corn tortillas, carnitas, cilantro, onion</div>
+      <div class="menu-footer">
+        <div class="menu-price">$8.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Street Tacos (x3)…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1588137378633-dea1336ce1e2" alt="Avocado Omelette" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Avocado Omelette</div>
+      <div class="menu-rest">The Breakfast Club</div>
+      <div class="menu-desc">Three-egg omelette with avocado and feta</div>
+      <div class="menu-footer">
+        <div class="menu-price">$11.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Avocado Omelette…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1608039755401-742074f0548d" alt="Eggs Benedict" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Eggs Benedict</div>
+      <div class="menu-rest">The Breakfast Club</div>
+      <div class="menu-desc">Poached eggs, Canadian bacon, hollandaise</div>
+      <div class="menu-footer">
+        <div class="menu-price">$12.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Eggs Benedict…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="French Toast" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">French Toast</div>
+      <div class="menu-rest">The Breakfast Club</div>
+      <div class="menu-desc">Brioche, cinnamon, powdered sugar</div>
+      <div class="menu-footer">
+        <div class="menu-price">$8.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing French Toast…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Fresh Orange Juice" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Fresh Orange Juice</div>
+      <div class="menu-rest">The Breakfast Club</div>
+      <div class="menu-desc">Freshly squeezed</div>
+      <div class="menu-footer">
+        <div class="menu-price">$3.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Fresh Orange Juice…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1528207776546-365bb710ee93" alt="Pancake Stack" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Pancake Stack</div>
+      <div class="menu-rest">The Breakfast Club</div>
+      <div class="menu-desc">Three fluffy pancakes with maple syrup</div>
+      <div class="menu-footer">
+        <div class="menu-price">$9.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Pancake Stack…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1568901346375-23c9450c58cd(2)" alt="Bacon Double Burger" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Bacon Double Burger</div>
+      <div class="menu-rest">The Burger Barn</div>
+      <div class="menu-desc">Double patty, crispy bacon, special sauce</div>
+      <div class="menu-footer">
+        <div class="menu-price">$13.49 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Bacon Double Burger…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1572490122747-3968b75cc699" alt="Chocolate Milkshake" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Chocolate Milkshake</div>
+      <div class="menu-rest">The Burger Barn</div>
+      <div class="menu-desc">Thick chocolate milkshake</div>
+      <div class="menu-footer">
+        <div class="menu-price">$4.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Chocolate Milkshake…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1568901346375-23c9450c58cd(2)" alt="Classic Cheeseburger" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Classic Cheeseburger</div>
+      <div class="menu-rest">The Burger Barn</div>
+      <div class="menu-desc">Beef patty, cheddar, lettuce, tomato</div>
+      <div class="menu-footer">
+        <div class="menu-price">$9.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Classic Cheeseburger…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1576107232684-1279f390859f" alt="Loaded Fries" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Loaded Fries</div>
+      <div class="menu-rest">The Burger Barn</div>
+      <div class="menu-desc">Fries with cheese sauce and jalapeños</div>
+      <div class="menu-footer">
+        <div class="menu-price">$5.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Loaded Fries…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1568901346375-23c9450c58cd(2)" alt="Veggie Burger" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Veggie Burger</div>
+      <div class="menu-rest">The Burger Barn</div>
+      <div class="menu-desc">Plant-based patty with avocado</div>
+      <div class="menu-footer">
+        <div class="menu-price">$10.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Veggie Burger…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Bruschetta" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Bruschetta</div>
+      <div class="menu-rest">The Pasta Place</div>
+      <div class="menu-desc">Toasted bread, tomato, basil, olive oil</div>
+      <div class="menu-footer">
+        <div class="menu-price">$5.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Bruschetta…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1645112411341-6c4fd023714a" alt="Fettuccine Alfredo" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Fettuccine Alfredo</div>
+      <div class="menu-rest">The Pasta Place</div>
+      <div class="menu-desc">Creamy parmesan sauce</div>
+      <div class="menu-footer">
+        <div class="menu-price">$12.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Fettuccine Alfredo…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1574894709920-11b28e7367e3" alt="Lasagna" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Lasagna</div>
+      <div class="menu-rest">The Pasta Place</div>
+      <div class="menu-desc">Layered beef ragù and béchamel</div>
+      <div class="menu-footer">
+        <div class="menu-price">$14.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Lasagna…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="./Harvest — Food Delivery Platform_files/photo-1546069901-ba9599a7e63c" alt="Panna Cotta" loading="lazy" onerror="this.parentElement.style.background=&#39;var(--cream)&#39;">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Panna Cotta</div>
+      <div class="menu-rest">The Pasta Place</div>
+      <div class="menu-desc">Vanilla with berry coulis</div>
+      <div class="menu-footer">
+        <div class="menu-price">$5.49 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Panna Cotta…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-card">
+    <div class="menu-img-wrap">
+      <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=300&q=80" alt="Spaghetti Carbonara" loading="lazy">
+      <span class="menu-avail av-yes">Available</span>
+    </div>
+    <div class="menu-body">
+      <div class="menu-name">Spaghetti Carbonara</div>
+      <div class="menu-rest">The Pasta Place</div>
+      <div class="menu-desc">Pancetta, egg, pecorino, black pepper</div>
+      <div class="menu-footer">
+        <div class="menu-price">$13.99 <span>USD</span></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Spaghetti Carbonara…&#39;)">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="toast(&#39;Item removed&#39;,&#39;#b43232&#39;)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div></div>
   </div>
 
   <!-- USERS -->
   <div class="page" id="page-users">
     <div class="sh">
-      <div><div class="sh-title">User Management</div><div class="sh-sub" id="users-sub">Loading…</div></div>
-      <button class="btn btn-primary" onclick="openModal('m-add-user')">+ Add User</button>
+      <div><div class="sh-title">User Management</div><div class="sh-sub" id="users-sub">45 total users</div></div>
+      <button class="btn btn-primary" onclick="openModal(&#39;m-add-user&#39;)">+ Add User</button>
     </div>
     <div class="tab-row" id="user-tabs">
-      <div class="tab active" onclick="filterUsers('all',this)">All</div>
-      <div class="tab" onclick="filterUsers('customer',this)">Customers</div>
-      <div class="tab" onclick="filterUsers('driver',this)">Drivers</div>
-      <div class="tab" onclick="filterUsers('admin',this)">Admins</div>
+      <div class="tab active" onclick="filterUsers(&#39;all&#39;,this)">All</div>
+      <div class="tab" onclick="filterUsers(&#39;customer&#39;,this)">Customers</div>
+      <div class="tab" onclick="filterUsers(&#39;driver&#39;,this)">Drivers</div>
+      <div class="tab" onclick="filterUsers(&#39;admin&#39;,this)">Admins</div>
     </div>
     <div class="table-wrap"><table>
       <thead><tr><th>#</th><th>Name</th><th>Username</th><th>Email</th><th>Role</th><th>Joined</th><th>Actions</th></tr></thead>
-      <tbody id="users-tbody"><tr><td colspan="7" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+      <tbody id="users-tbody">
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#45</td>
+    <td><div class="flex-c"><div class="av">TP</div><div style="font-weight:500">Thomas Parker</div></div></td>
+    <td style="color:var(--muted)">@thomasp</td>
+    <td style="color:var(--muted)">thomas.p@email.com</td>
+    <td><span class="badge b-cream">admin</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 19, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Thomas…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#44</td>
+    <td><div class="flex-c"><div class="av">SC</div><div style="font-weight:500">Susan Campbell</div></div></td>
+    <td style="color:var(--muted)">@susanc</td>
+    <td style="color:var(--muted)">susan.c@email.com</td>
+    <td><span class="badge b-cream">admin</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 18, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Susan…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#43</td>
+    <td><div class="flex-c"><div class="av">RP</div><div style="font-weight:500">Robert Phillips</div></div></td>
+    <td style="color:var(--muted)">@robertp</td>
+    <td style="color:var(--muted)">robert.p@email.com</td>
+    <td><span class="badge b-cream">admin</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 17, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Robert…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#42</td>
+    <td><div class="flex-c"><div class="av">PT</div><div style="font-weight:500">Paula Turner</div></div></td>
+    <td style="color:var(--muted)">@paulat</td>
+    <td style="color:var(--muted)">paula.t@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 16, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Paula…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#41</td>
+    <td><div class="flex-c"><div class="av">OR</div><div style="font-weight:500">Oscar Roberts</div></div></td>
+    <td style="color:var(--muted)">@oscarr</td>
+    <td style="color:var(--muted)">oscar.r@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 15, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Oscar…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#40</td>
+    <td><div class="flex-c"><div class="av">NP</div><div style="font-weight:500">Nina Perez</div></div></td>
+    <td style="color:var(--muted)">@ninap</td>
+    <td style="color:var(--muted)">nina.p@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 14, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Nina…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#39</td>
+    <td><div class="flex-c"><div class="av">MM</div><div style="font-weight:500">Mike Mitchell</div></div></td>
+    <td style="color:var(--muted)">@mikem</td>
+    <td style="color:var(--muted)">mike.m@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 13, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Mike…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#38</td>
+    <td><div class="flex-c"><div class="av">LC</div><div style="font-weight:500">Laura Carter</div></div></td>
+    <td style="color:var(--muted)">@laurac</td>
+    <td style="color:var(--muted)">laura.c@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 12, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Laura…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#37</td>
+    <td><div class="flex-c"><div class="av">KN</div><div style="font-weight:500">Kevin Nelson</div></div></td>
+    <td style="color:var(--muted)">@kevinn</td>
+    <td style="color:var(--muted)">kevinn@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 11, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Kevin…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#36</td>
+    <td><div class="flex-c"><div class="av">JG</div><div style="font-weight:500">Julia Gonzalez</div></div></td>
+    <td style="color:var(--muted)">@juliag</td>
+    <td style="color:var(--muted)">julia.g@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 10, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Julia…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#35</td>
+    <td><div class="flex-c"><div class="av">IB</div><div style="font-weight:500">Ivan Baker</div></div></td>
+    <td style="color:var(--muted)">@ivanb</td>
+    <td style="color:var(--muted)">ivan.b@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 9, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Ivan…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#34</td>
+    <td><div class="flex-c"><div class="av">HA</div><div style="font-weight:500">Hannah Adams</div></div></td>
+    <td style="color:var(--muted)">@hannaha</td>
+    <td style="color:var(--muted)">hannah.a@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 8, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Hannah…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#33</td>
+    <td><div class="flex-c"><div class="av">GG</div><div style="font-weight:500">George Green</div></div></td>
+    <td style="color:var(--muted)">@georgeg</td>
+    <td style="color:var(--muted)">george.g@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 7, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing George…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#32</td>
+    <td><div class="flex-c"><div class="av">FS</div><div style="font-weight:500">Fiona Scott</div></div></td>
+    <td style="color:var(--muted)">@fionas</td>
+    <td style="color:var(--muted)">fiona.s@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 6, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Fiona…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#31</td>
+    <td><div class="flex-c"><div class="av">EH</div><div style="font-weight:500">Ethan Hill</div></div></td>
+    <td style="color:var(--muted)">@ethanh</td>
+    <td style="color:var(--muted)">ethan.h@email.com</td>
+    <td><span class="badge b-sage">driver</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 5, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Ethan…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#30</td>
+    <td><div class="flex-c"><div class="av">DL</div><div style="font-weight:500">Diana Lopez</div></div></td>
+    <td style="color:var(--muted)">@dianal</td>
+    <td style="color:var(--muted)">diana.l@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 4, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Diana…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#29</td>
+    <td><div class="flex-c"><div class="av">CW</div><div style="font-weight:500">Carlos Wright</div></div></td>
+    <td style="color:var(--muted)">@carlosw</td>
+    <td style="color:var(--muted)">carlos.w@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 3, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Carlos…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#28</td>
+    <td><div class="flex-c"><div class="av">BK</div><div style="font-weight:500">Bella King</div></div></td>
+    <td style="color:var(--muted)">@bellak</td>
+    <td style="color:var(--muted)">bella.k@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 2, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Bella…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#27</td>
+    <td><div class="flex-c"><div class="av">AH</div><div style="font-weight:500">Aaron Hernandez</div></div></td>
+    <td style="color:var(--muted)">@aaronh</td>
+    <td style="color:var(--muted)">aaron.h@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Feb 1, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Aaron…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#26</td>
+    <td><div class="flex-c"><div class="av">ZY</div><div style="font-weight:500">Zoe Young</div></div></td>
+    <td style="color:var(--muted)">@zoey</td>
+    <td style="color:var(--muted)">zoe.y@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 30, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Zoe…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#25</td>
+    <td><div class="flex-c"><div class="av">YA</div><div style="font-weight:500">Yara Allen</div></div></td>
+    <td style="color:var(--muted)">@yaraa</td>
+    <td style="color:var(--muted)">yara.a@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 29, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Yara…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#24</td>
+    <td><div class="flex-c"><div class="av">XH</div><div style="font-weight:500">Xander Hall</div></div></td>
+    <td style="color:var(--muted)">@xanderh</td>
+    <td style="color:var(--muted)">xander.h@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 28, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Xander…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#23</td>
+    <td><div class="flex-c"><div class="av">WW</div><div style="font-weight:500">Wendy Walker</div></div></td>
+    <td style="color:var(--muted)">@wendyw</td>
+    <td style="color:var(--muted)">wendy.w@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 27, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Wendy…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#22</td>
+    <td><div class="flex-c"><div class="av">VL</div><div style="font-weight:500">Victor Lee</div></div></td>
+    <td style="color:var(--muted)">@victorl</td>
+    <td style="color:var(--muted)">victor.l@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 26, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Victor…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#21</td>
+    <td><div class="flex-c"><div class="av">UL</div><div style="font-weight:500">Uma Lewis</div></div></td>
+    <td style="color:var(--muted)">@umal</td>
+    <td style="color:var(--muted)">uma.l@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 25, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Uma…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#20</td>
+    <td><div class="flex-c"><div class="av">TR</div><div style="font-weight:500">Tina Rodriguez</div></div></td>
+    <td style="color:var(--muted)">@tinar</td>
+    <td style="color:var(--muted)">tina.r@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 24, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Tina…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#19</td>
+    <td><div class="flex-c"><div class="av">SC</div><div style="font-weight:500">Sam Clark</div></div></td>
+    <td style="color:var(--muted)">@samc</td>
+    <td style="color:var(--muted)">sam.c@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 23, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Sam…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#18</td>
+    <td><div class="flex-c"><div class="av">RR</div><div style="font-weight:500">Rachel Robinson</div></div></td>
+    <td style="color:var(--muted)">@rachelr</td>
+    <td style="color:var(--muted)">rachel.r@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 22, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Rachel…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#17</td>
+    <td><div class="flex-c"><div class="av">QM</div><div style="font-weight:500">Quinn Martinez</div></div></td>
+    <td style="color:var(--muted)">@quinnm</td>
+    <td style="color:var(--muted)">quinn.m@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 21, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Quinn…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#16</td>
+    <td><div class="flex-c"><div class="av">PG</div><div style="font-weight:500">Paul Garcia</div></div></td>
+    <td style="color:var(--muted)">@paulg</td>
+    <td style="color:var(--muted)">paul.g@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 20, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Paul…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#15</td>
+    <td><div class="flex-c"><div class="av">OM</div><div style="font-weight:500">Olivia Martin</div></div></td>
+    <td style="color:var(--muted)">@oliviam</td>
+    <td style="color:var(--muted)">olivia.m@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 19, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Olivia…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#14</td>
+    <td><div class="flex-c"><div class="av">NH</div><div style="font-weight:500">Noah Harris</div></div></td>
+    <td style="color:var(--muted)">@noahh</td>
+    <td style="color:var(--muted)">noah.h@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 18, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Noah…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#13</td>
+    <td><div class="flex-c"><div class="av">MW</div><div style="font-weight:500">Mia White</div></div></td>
+    <td style="color:var(--muted)">@miaw</td>
+    <td style="color:var(--muted)">mia.w@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 17, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Mia…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#12</td>
+    <td><div class="flex-c"><div class="av">LJ</div><div style="font-weight:500">Liam Jackson</div></div></td>
+    <td style="color:var(--muted)">@liamj</td>
+    <td style="color:var(--muted)">liam.j@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 16, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Liam…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#11</td>
+    <td><div class="flex-c"><div class="av">KT</div><div style="font-weight:500">Karen Thomas</div></div></td>
+    <td style="color:var(--muted)">@karent</td>
+    <td style="color:var(--muted)">karen.t@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 15, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Karen…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#10</td>
+    <td><div class="flex-c"><div class="av">JA</div><div style="font-weight:500">Jack Anderson</div></div></td>
+    <td style="color:var(--muted)">@jacka</td>
+    <td style="color:var(--muted)">jack.a@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 14, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Jack…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#9</td>
+    <td><div class="flex-c"><div class="av">IT</div><div style="font-weight:500">Isla Taylor</div></div></td>
+    <td style="color:var(--muted)">@islat</td>
+    <td style="color:var(--muted)">isla.t@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 13, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Isla…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#8</td>
+    <td><div class="flex-c"><div class="av">HM</div><div style="font-weight:500">Henry Moore</div></div></td>
+    <td style="color:var(--muted)">@henrym</td>
+    <td style="color:var(--muted)">henry.mo@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 12, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Henry…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#7</td>
+    <td><div class="flex-c"><div class="av">GW</div><div style="font-weight:500">Grace Wilson</div></div></td>
+    <td style="color:var(--muted)">@gracew</td>
+    <td style="color:var(--muted)">grace.w@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 11, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Grace…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#6</td>
+    <td><div class="flex-c"><div class="av">FM</div><div style="font-weight:500">Frank Miller</div></div></td>
+    <td style="color:var(--muted)">@frankm</td>
+    <td style="color:var(--muted)">frank.m@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 10, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Frank…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#5</td>
+    <td><div class="flex-c"><div class="av">ED</div><div style="font-weight:500">Eva Davis</div></div></td>
+    <td style="color:var(--muted)">@evad</td>
+    <td style="color:var(--muted)">eva.davis@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 9, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Eva…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#4</td>
+    <td><div class="flex-c"><div class="av">DB</div><div style="font-weight:500">David Brown</div></div></td>
+    <td style="color:var(--muted)">@davidb</td>
+    <td style="color:var(--muted)">david.b@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 8, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing David…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#3</td>
+    <td><div class="flex-c"><div class="av">CW</div><div style="font-weight:500">Carol Williams</div></div></td>
+    <td style="color:var(--muted)">@carolw</td>
+    <td style="color:var(--muted)">carol.w@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 7, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Carol…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#2</td>
+    <td><div class="flex-c"><div class="av">BS</div><div style="font-weight:500">Bob Smith</div></div></td>
+    <td style="color:var(--muted)">@bobsmith</td>
+    <td style="color:var(--muted)">bob.smith@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 6, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Bob…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr>
+  <tr>
+    <td style="color:var(--muted);font-size:12px">#1</td>
+    <td><div class="flex-c"><div class="av">AJ</div><div style="font-weight:500">Alice Johnson</div></div></td>
+    <td style="color:var(--muted)">@alicej</td>
+    <td style="color:var(--muted)">alice.johnson@email.com</td>
+    <td><span class="badge b-olive">customer</span></td>
+    <td style="color:var(--muted);font-size:12px">Jan 5, 2024</td>
+    <td><div style="display:flex;gap:6px">
+      <button class="btn btn-ghost btn-xs" onclick="toast(&#39;Editing Alice…&#39;)">Edit</button>
+      <button class="btn btn-danger btn-xs" onclick="toast(&#39;Removed&#39;,&#39;#b43232&#39;)">Remove</button>
+    </div></td>
+  </tr></tbody>
     </table></div>
   </div>
 
   <!-- ORDERS -->
   <div class="page" id="page-orders">
-    <div class="sh"><div><div class="sh-title">Orders</div><div class="sh-sub" id="orders-sub">Loading…</div></div></div>
+    <div class="sh"><div><div class="sh-title">Orders</div><div class="sh-sub" id="orders-sub">45 total orders</div></div></div>
     <div class="three-col">
-      <div class="sc"><div class="sc-icon sci-s">✓</div><div class="sc-label">Delivered</div><div class="sc-value" id="o-delivered">—</div></div>
-      <div class="sc"><div class="sc-icon sci-g">⏳</div><div class="sc-label">Active</div><div class="sc-value" id="o-active">—</div></div>
-      <div class="sc"><div class="sc-icon" style="background:#fef0f0">✕</div><div class="sc-label">Cancelled</div><div class="sc-value" id="o-cancelled">—</div></div>
+      <div class="sc"><div class="sc-icon sci-s">✓</div><div class="sc-label">Delivered</div><div class="sc-value" id="o-delivered">39</div></div>
+      <div class="sc"><div class="sc-icon sci-g">⏳</div><div class="sc-label">Active</div><div class="sc-value" id="o-active">4</div></div>
+      <div class="sc"><div class="sc-icon" style="background:#fef0f0">✕</div><div class="sc-label">Cancelled</div><div class="sc-value" id="o-cancelled">2</div></div>
     </div>
     <div class="table-wrap"><table>
       <thead><tr><th>ID</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th><th>Payment</th></tr></thead>
-      <tbody id="orders-tbody"><tr><td colspan="6" style="text-align:center;color:var(--muted);padding:30px"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+      <tbody id="orders-tbody">
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#45</td>
+      <td><div class="flex-c"><div class="av">CW</div>Carlos Wright</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 19, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$38.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#44</td>
+      <td><div class="flex-c"><div class="av">AH</div>Aaron Hernandez</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 19, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$16.98</td>
+      <td><span class="badge b-red">cancelled</span></td>
+      <td><span class="badge b-cream">refunded</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#43</td>
+      <td><div class="flex-c"><div class="av">YA</div>Yara Allen</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 18, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$21.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#42</td>
+      <td><div class="flex-c"><div class="av">WW</div>Wendy Walker</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 18, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$27.48</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#41</td>
+      <td><div class="flex-c"><div class="av">UL</div>Uma Lewis</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 17, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$33.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#40</td>
+      <td><div class="flex-c"><div class="av">SC</div>Sam Clark</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 17, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$24.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#39</td>
+      <td><div class="flex-c"><div class="av">QM</div>Quinn Martinez</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 16, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$42.97</td>
+      <td><span class="badge b-sage">out for delivery</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#38</td>
+      <td><div class="flex-c"><div class="av">OM</div>Olivia Martin</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 16, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$18.98</td>
+      <td><span class="badge b-gray">pending</span></td>
+      <td><span class="badge b-gray">pending</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#37</td>
+      <td><div class="flex-c"><div class="av">MW</div>Mia White</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 15, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$26.98</td>
+      <td><span class="badge b-blue">confirmed</span></td>
+      <td><span class="badge b-gray">pending</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#36</td>
+      <td><div class="flex-c"><div class="av">KT</div>Karen Thomas</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 15, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$31.97</td>
+      <td><span class="badge b-gold">preparing</span></td>
+      <td><span class="badge b-gray">pending</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#35</td>
+      <td><div class="flex-c"><div class="av">IT</div>Isla Taylor</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 14, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$19.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#34</td>
+      <td><div class="flex-c"><div class="av">GW</div>Grace Wilson</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 13, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$36.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#33</td>
+      <td><div class="flex-c"><div class="av">ED</div>Eva Davis</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 13, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$22.98</td>
+      <td><span class="badge b-red">cancelled</span></td>
+      <td><span class="badge b-cream">refunded</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#32</td>
+      <td><div class="flex-c"><div class="av">CW</div>Carol Williams</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 12, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$28.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#31</td>
+      <td><div class="flex-c"><div class="av">AJ</div>Alice Johnson</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 12, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$15.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#30</td>
+      <td><div class="flex-c"><div class="av">DL</div>Diana Lopez</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 11, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$47.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#29</td>
+      <td><div class="flex-c"><div class="av">CW</div>Carlos Wright</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 10, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$21.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#28</td>
+      <td><div class="flex-c"><div class="av">BK</div>Bella King</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 10, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$33.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#27</td>
+      <td><div class="flex-c"><div class="av">AH</div>Aaron Hernandez</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 10, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$28.48</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#26</td>
+      <td><div class="flex-c"><div class="av">ZY</div>Zoe Young</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 9, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$39.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#25</td>
+      <td><div class="flex-c"><div class="av">YA</div>Yara Allen</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 9, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$23.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#24</td>
+      <td><div class="flex-c"><div class="av">XH</div>Xander Hall</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 9, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$31.48</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#23</td>
+      <td><div class="flex-c"><div class="av">WW</div>Wendy Walker</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 8, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$26.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#22</td>
+      <td><div class="flex-c"><div class="av">VL</div>Victor Lee</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 8, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$44.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#21</td>
+      <td><div class="flex-c"><div class="av">UL</div>Uma Lewis</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 8, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$18.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#20</td>
+      <td><div class="flex-c"><div class="av">TR</div>Tina Rodriguez</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 7, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$35.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#19</td>
+      <td><div class="flex-c"><div class="av">SC</div>Sam Clark</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 7, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$22.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#18</td>
+      <td><div class="flex-c"><div class="av">RR</div>Rachel Robinson</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 7, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$27.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#17</td>
+      <td><div class="flex-c"><div class="av">QM</div>Quinn Martinez</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 6, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$31.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#16</td>
+      <td><div class="flex-c"><div class="av">PG</div>Paul Garcia</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 6, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$24.48</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#15</td>
+      <td><div class="flex-c"><div class="av">OM</div>Olivia Martin</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 5, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$38.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#14</td>
+      <td><div class="flex-c"><div class="av">NH</div>Noah Harris</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 5, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$29.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#13</td>
+      <td><div class="flex-c"><div class="av">MW</div>Mia White</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 5, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$19.48</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#12</td>
+      <td><div class="flex-c"><div class="av">LJ</div>Liam Jackson</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 4, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$33.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#11</td>
+      <td><div class="flex-c"><div class="av">KT</div>Karen Thomas</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 4, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$22.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#10</td>
+      <td><div class="flex-c"><div class="av">JA</div>Jack Anderson</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 4, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$41.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#9</td>
+      <td><div class="flex-c"><div class="av">IT</div>Isla Taylor</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 3, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$26.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#8</td>
+      <td><div class="flex-c"><div class="av">HM</div>Henry Moore</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 3, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$15.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#7</td>
+      <td><div class="flex-c"><div class="av">GW</div>Grace Wilson</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 3, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$36.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#6</td>
+      <td><div class="flex-c"><div class="av">FM</div>Frank Miller</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 2, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$28.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#5</td>
+      <td><div class="flex-c"><div class="av">ED</div>Eva Davis</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 2, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$43.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#4</td>
+      <td><div class="flex-c"><div class="av">DB</div>David Brown</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 2, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$19.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#3</td>
+      <td><div class="flex-c"><div class="av">CW</div>Carol Williams</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 1, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$31.96</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#2</td>
+      <td><div class="flex-c"><div class="av">BS</div>Bob Smith</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 1, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$27.98</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr>
+    <tr>
+      <td style="color:var(--muted);font-size:12px">#1</td>
+      <td><div class="flex-c"><div class="av">AJ</div>Alice Johnson</div></td>
+      <td style="color:var(--muted);font-size:12px">Mar 1, 2024</td>
+      <td style="color:var(--olive);font-weight:600">$24.97</td>
+      <td><span class="badge b-green">delivered</span></td>
+      <td><span class="badge b-green">completed</span></td>
+    </tr></tbody>
     </table></div>
   </div>
 
@@ -415,18 +2497,18 @@ select option{background:var(--white)}
 <!-- MODALS -->
 <div class="overlay" id="m-add-rest">
   <div class="modal">
-    <div class="modal-hdr"><div class="modal-title">Add New Restaurant</div><button class="modal-close" onclick="closeModal('m-add-rest')">×</button></div>
+    <div class="modal-hdr"><div class="modal-title">Add New Restaurant</div><button class="modal-close" onclick="closeModal(&#39;m-add-rest&#39;)">×</button></div>
     <div class="fg-grid">
-      <div class="fg fg-full"><label>Restaurant Name</label><input id="r-name" placeholder="e.g. The Taco Palace"/></div>
-      <div class="fg"><label>City</label><input id="r-city" placeholder="New York"/></div>
-      <div class="fg"><label>Street Name</label><input id="r-street" placeholder="Broadway"/></div>
-      <div class="fg"><label>Street Number</label><input id="r-num" placeholder="42"/></div>
-      <div class="fg"><label>Unit / Suite</label><input id="r-unit" placeholder="Optional"/></div>
+      <div class="fg fg-full"><label>Restaurant Name</label><input id="r-name" placeholder="e.g. The Taco Palace"></div>
+      <div class="fg"><label>City</label><input id="r-city" placeholder="New York"></div>
+      <div class="fg"><label>Street Name</label><input id="r-street" placeholder="Broadway"></div>
+      <div class="fg"><label>Street Number</label><input id="r-num" placeholder="42"></div>
+      <div class="fg"><label>Unit / Suite</label><input id="r-unit" placeholder="Optional"></div>
       <div class="fg"><label>Status</label><select id="r-active"><option value="1">Active</option><option value="0">Inactive</option></select></div>
     </div>
     <div class="modal-ftr">
-      <button class="btn btn-ghost" onclick="closeModal('m-add-rest')">Cancel</button>
-      <button class="btn btn-primary" onclick="saveClose('m-add-rest','Restaurant saved!')">Save Restaurant</button>
+      <button class="btn btn-ghost" onclick="closeModal(&#39;m-add-rest&#39;)">Cancel</button>
+      <button class="btn btn-primary" onclick="saveClose(&#39;m-add-rest&#39;,&#39;Restaurant saved!&#39;)">Save Restaurant</button>
     </div>
   </div>
 </div>
@@ -435,36 +2517,55 @@ select option{background:var(--white)}
   <div class="modal">
     <div class="modal-hdr"><div class="modal-title">Add Menu Item</div><button class="modal-close" onclick="closeModal('m-add-menu')">×</button></div>
     <div class="fg-grid">
-      <div class="fg fg-full"><label>Item Name</label><input placeholder="Spicy Chicken Burger"/></div>
+      <div class="fg fg-full"><label>Item Name</label><input id="mi-name" placeholder="Spicy Chicken Burger"></div>
       <div class="fg"><label>Restaurant</label><select id="mi-rest"></select></div>
-      <div class="fg"><label>Price ($)</label><input type="number" step="0.01" placeholder="12.99"/></div>
-      <div class="fg fg-full"><label>Description</label><textarea rows="2" placeholder="Describe the dish…"></textarea></div>
-      <div class="fg"><label>Available</label><select><option>Yes</option><option>No</option></select></div>
+      <div class="fg"><label>Price ($)</label><input id="mi-price" type="number" step="0.01" placeholder="12.99"></div>
+      <div class="fg fg-full"><label>Description</label><textarea id="mi-desc" rows="2" placeholder="Describe the dish…"></textarea></div>
     </div>
     <div class="modal-ftr">
       <button class="btn btn-ghost" onclick="closeModal('m-add-menu')">Cancel</button>
-      <button class="btn btn-primary" onclick="saveClose('m-add-menu','Menu item saved!')">Save Item</button>
+      <button class="btn btn-primary" onclick="handleAddMenu()">Save Item</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-edit-menu">
+  <div class="modal">
+    <div class="modal-hdr"><div class="modal-title">Edit Menu Item</div><button class="modal-close" onclick="closeModal('m-edit-menu')">×</button></div>
+    <input type="hidden" id="edit-mi-id">
+    <div class="fg-grid">
+      <div class="fg fg-full"><label>Item Name</label><input id="edit-mi-name" placeholder="Spicy Chicken Burger"></div>
+      <div class="fg"><label>Price ($)</label><input id="edit-mi-price" type="number" step="0.01" placeholder="12.99"></div>
+      <div class="fg fg-full"><label>Description</label><textarea id="edit-mi-desc" rows="2" placeholder="Describe the dish…"></textarea></div>
+      <div class="fg" style="display:flex;align-items:center;gap:8px;padding-top:20px">
+        <input type="checkbox" id="edit-mi-avail" style="width:20px;height:20px">
+        <label for="edit-mi-avail" style="margin:0">Available for Order</label>
+      </div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-ghost" onclick="closeModal('m-edit-menu')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveEditMenu()">Save Changes</button>
     </div>
   </div>
 </div>
 
 <div class="overlay" id="m-add-user">
   <div class="modal">
-    <div class="modal-hdr"><div class="modal-title">Add New User</div><button class="modal-close" onclick="closeModal('m-add-user')">×</button></div>
+    <div class="modal-hdr"><div class="modal-title">Add New User</div><button class="modal-close" onclick="closeModal(&#39;m-add-user&#39;)">×</button></div>
     <div class="fg-grid">
-      <div class="fg"><label>First Name</label><input placeholder="Alice"/></div>
-      <div class="fg"><label>Last Name</label><input placeholder="Johnson"/></div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="alice@email.com"/></div>
-      <div class="fg"><label>Username</label><input placeholder="alicej"/></div>
-      <div class="fg"><label>Password</label><input type="password" placeholder="••••••••"/></div>
+      <div class="fg"><label>First Name</label><input placeholder="Alice"></div>
+      <div class="fg"><label>Last Name</label><input placeholder="Johnson"></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="alice@email.com"></div>
+      <div class="fg"><label>Username</label><input placeholder="alicej"></div>
+      <div class="fg"><label>Password</label><input type="password" placeholder="••••••••"></div>
       <div class="fg"><label>Role</label><select><option>customer</option><option>driver</option><option>admin</option></select></div>
-      <div class="fg"><label>Phone</label><input placeholder="+1-555-0000"/></div>
-      <div class="fg"><label>City</label><input placeholder="New York"/></div>
-      <div class="fg fg-full"><label>Street Address</label><input placeholder="123 Main St, Apt 4B"/></div>
+      <div class="fg"><label>Phone</label><input placeholder="+1-555-0000"></div>
+      <div class="fg"><label>City</label><input placeholder="New York"></div>
+      <div class="fg fg-full"><label>Street Address</label><input placeholder="123 Main St, Apt 4B"></div>
     </div>
     <div class="modal-ftr">
-      <button class="btn btn-ghost" onclick="closeModal('m-add-user')">Cancel</button>
-      <button class="btn btn-primary" onclick="saveClose('m-add-user','User saved!')">Save User</button>
+      <button class="btn btn-ghost" onclick="closeModal(&#39;m-add-user&#39;)">Cancel</button>
+      <button class="btn btn-primary" onclick="saveClose(&#39;m-add-user&#39;,&#39;User saved!&#39;)">Save User</button>
     </div>
   </div>
 </div>
@@ -473,7 +2574,7 @@ select option{background:var(--white)}
 
 <script>
 // ── CONFIG ────────────────────────────────────────────────
-const API = 'http://localhost:5000/api';  // matches SERVER_PORT=5000 in .env
+const API = window.location.origin + '/api'; 
 
 // ── PHOTO MAP (Unsplash per restaurant name keyword) ──────
 const REST_IMGS = {
@@ -490,38 +2591,106 @@ const REST_IMGS = {
   'default':   'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=350&fit=crop',
 };
 const MENU_IMGS = {
-  'burger':     'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=250&fit=crop',
-  'bacon':      'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=250&fit=crop',
-  'veggie':     'https://images.unsplash.com/photo-1550950158-d0d960dff549?w=400&h=250&fit=crop',
-  'fries':      'https://images.unsplash.com/photo-1576107232684-1279f390859f?w=400&h=250&fit=crop',
-  'milkshake':  'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&h=250&fit=crop',
-  'margherita': 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop',
-  'pepperoni':  'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=250&fit=crop',
-  'pizza':      'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop',
-  'salmon':     'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=250&fit=crop',
-  'dragon':     'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=400&h=250&fit=crop',
-  'tuna':       'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=400&h=250&fit=crop',
-  'taco':       'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=250&fit=crop',
-  'burrito':    'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=250&fit=crop',
-  'carbonara':  'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop',
-  'alfredo':    'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=400&h=250&fit=crop',
-  'lasagna':    'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=400&h=250&fit=crop',
-  'butter':     'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=250&fit=crop',
-  'lamb':       'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=250&fit=crop',
-  'biryani':    'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=250&fit=crop',
-  'ribs':       'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=250&fit=crop',
-  'pulled':     'https://images.unsplash.com/photo-1549611016-3a70d82b5040?w=400&h=250&fit=crop',
-  'brisket':    'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=250&fit=crop',
-  'quinoa':     'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop',
-  'caesar':     'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=250&fit=crop',
-  'avocado':    'https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=400&h=250&fit=crop',
-  'pho':        'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=250&fit=crop',
-  'pad':        'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400&h=250&fit=crop',
-  'ramen':      'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=250&fit=crop',
-  'pancake':    'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400&h=250&fit=crop',
-  'eggs':       'https://images.unsplash.com/photo-1608039755401-742074f0548d?w=400&h=250&fit=crop',
-  'omelette':   'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&h=250&fit=crop',
-  'default':    'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop',
+  // Burgers & Sandwiches
+  'classic cheeseburger': 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&h=250',
+  'burger':       'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&h=250',
+  'cheeseburger': 'https://images.unsplash.com/photo-1550317144-b38c17079375?auto=format&fit=crop&w=400&h=250',
+  'bacon':        'https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=400&h=250',
+  'veggie':       'https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=400&h=250',
+  'sandwich':     'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=400&h=250',
+  'pulled pork':  'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=400&h=250',
+  
+  // Sides & Drinks
+  'fries':        'https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=400&h=250',
+  'milkshake':    'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=400&h=250',
+  // Sides & Drinks
+  'fries':        'https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=400&h=250',
+  'milkshake':    'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=400&h=250',
+  'bubble tea':   'https://source.unsplash.com/600x400/?bubble-tea,boba',
+  'bubble':       'https://source.unsplash.com/600x400/?bubble-tea,boba',
+  'boba':         'https://source.unsplash.com/600x400/?bubble-tea,boba',
+  'bobba':        'https://source.unsplash.com/600x400/?bubble-tea,boba',
+  'mango lassi':  'https://source.unsplash.com/600x400/?mango-lassi,lassi,mango-drink',
+  'lassi':        'https://source.unsplash.com/600x400/?mango-lassi,lassi,mango-drink',
+  'smoothie':     'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&h=250',
+  'green smoothie': 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=400&h=250',
+  'garlic naan':  'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=400&h=250',
+  'naan':         'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=400&h=250',
+  
+  // Pizza
+  'pizza margherita': 'https://source.unsplash.com/600x400/?margherita-pizza,margherita,pizza',
+  'margherita pizza': 'https://source.unsplash.com/600x400/?margherita-pizza,margherita,pizza',
+  'margarita':    'https://source.unsplash.com/600x400/?margherita-pizza,margherita,pizza',
+  'margherita':   'https://source.unsplash.com/600x400/?margherita-pizza,margherita,pizza',
+  'pepperoni':    'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&h=400',
+  'pizza':        'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&h=400',
+  'garlic bread': 'https://source.unsplash.com/600x400/?garlic-bread,garlic-toast',
+  'garlic brad':  'https://source.unsplash.com/600x400/?garlic-bread,garlic-toast',
+  'garlic':       'https://source.unsplash.com/600x400/?garlic-bread,garlic-toast',
+  
+  // Seafood & Sushi
+  'salmon':       'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&h=250',
+  'dragon roll':  'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=400&h=250',
+  'dragon':       'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=400&h=250', 
+  'tuna sashimi': 'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?auto=format&fit=crop&w=400&h=250',
+  'tuna':         'https://images.unsplash.com/photo-1501595091296-3a97056645bd?auto=format&fit=crop&w=400&h=250',
+  'nigiri':       'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&h=250',
+  'edamame':      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&h=250',
+  'miso':         'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&h=250',
+  'sashimi':      'https://images.unsplash.com/photo-1501595091296-3a97056645bd?auto=format&fit=crop&w=400&h=250',
+  
+  // Mexican & Italian
+  'spaghetti carbonara': 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=400&h=250',
+  'taco':         'https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=400&h=250',
+  'burrito':      'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=400&h=250',
+  'carbonara':    'https://images.unsplash.com/photo-1612450844493-f1bf145d33ec?auto=format&fit=crop&w=400&h=250',
+  'alfredo':      'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=400&h=250',
+  'lasagna':      'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=400&h=250',
+  'bruschetta':   'https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?auto=format&fit=crop&w=400&h=250',
+  'chorizo':      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&h=250',
+  'churro':       'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=400&h=250',
+  
+  // Meat & Indian
+  'butter chicken': 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=400&h=250',
+  'butter':       'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=400&h=250', 
+  'lamb rogan':   'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=400&h=250',
+  'lamb':         'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=400&h=250',
+  'vegetable biryani': 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=400&h=250',
+  'biryani':      'https://images.unsplash.com/photo-1563379091339-03b21bc4a6f8?auto=format&fit=crop&w=400&h=250',
+  'ribs':         'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&h=250',
+  'full rack':    'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&h=250',
+  'pulled':       'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=400&h=250', 
+  'brisket':      'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=400&h=250',
+  'mac':          'https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=400&h=250',
+  
+  // Salads & Bowls
+  'quinoa power bowl': 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&h=250',
+  'quinoa':       'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&h=250',
+  'caesar':       'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=400&h=250',
+  'avocado':      'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&h=250',
+  'acai bowl':    'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&h=250',
+  'acai':         'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&h=250',
+  'bowl':         'https://images.unsplash.com/photo-1505575967455-40e256f7377c?auto=format&fit=crop&w=400&h=250',
+  'toast':        'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&h=250',
+  
+  // Asian
+  'pho':          'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=400&h=250',
+  'pad thai':     'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=400&h=250',
+  'pad':          'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=400&h=250', 
+  'ramen':        'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?auto=format&fit=crop&w=400&h=250',
+  'spring':       'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&h=250',
+  'roll':         'https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=400&h=250',
+  
+  // Breakfast & Dessert
+  'pancake':      'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=400&h=250',
+  'eggs':         'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&h=250',
+  'omelette':     'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=400&h=250',
+  'tiramisu':     'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=400&h=250',
+  'pudding':      'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=400&h=250',
+  'panna':        'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&h=250',
+  'dessert':      'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=400&h=250',
+  
+  'default':      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&h=250',
 };
 
 function getRestImg(name){
@@ -530,9 +2699,49 @@ function getRestImg(name){
   return REST_IMGS.default;
 }
 function getMenuImg(name){
-  const n = name.toLowerCase();
-  for(const [k,v] of Object.entries(MENU_IMGS)) if(n.includes(k)) return v;
+  const n = name.toLowerCase().trim();
+  // Sort keys by length descending to match longest/most specific keywords first
+  const keys = Object.keys(MENU_IMGS).sort((a,b) => b.length - a.length);
+  for(const k of keys) {
+    if(n.includes(k)) return MENU_IMGS[k];
+  }
   return MENU_IMGS.default;
+}
+
+// Initialize images on page load
+function initImages(){
+  // Menu Images
+  const menuCards = document.querySelectorAll('.menu-card');
+  menuCards.forEach(card => {
+    const nameEl = card.querySelector('.menu-name');
+    const imgEl = card.querySelector('.menu-img-wrap img');
+    if(nameEl && imgEl){
+      const itemName = nameEl.textContent.trim();
+      imgEl.src = getMenuImg(itemName);
+    }
+  });
+  // Restaurant Images
+  const restCards = document.querySelectorAll('.rest-card');
+  restCards.forEach(card => {
+    const nameEl = card.querySelector('.rest-name');
+    const imgEl = card.querySelector('.rest-img-wrap img');
+    if(nameEl && imgEl){
+      const restName = nameEl.textContent.trim();
+      imgEl.src = getRestImg(restName);
+    }
+  });
+  // Dashboard Top Restaurants
+  const dashRestList = document.getElementById('dash-rest-list');
+  if(dashRestList){
+    const items = dashRestList.querySelectorAll('div[style*="display:flex"]');
+    items.forEach(item => {
+      const imgEl = item.querySelector('img');
+      const nameEl = item.querySelector('div[style*="font-weight:500"]');
+      if(imgEl && nameEl){
+        imgEl.src = getRestImg(nameEl.textContent.trim());
+      }
+    });
+  }
 }
 
 // ── HELPERS ───────────────────────────────────────────────
@@ -731,7 +2940,7 @@ function filterMenu(val){
 }
 function renderMenu(data){
   document.getElementById('menu-grid').innerHTML=data.map(m=>`
-  <div class="menu-card">
+  <div class="menu-card" id="menu-item-${m.ItemID}">
     <div class="menu-img-wrap">
       <img src="${getMenuImg(m.Name)}" alt="${m.Name}" loading="lazy" onerror="this.parentElement.style.background='var(--cream)'"/>
       <span class="menu-avail ${m.IsAvailable?'av-yes':'av-no'}">${m.IsAvailable?'Available':'Unavailable'}</span>
@@ -743,12 +2952,93 @@ function renderMenu(data){
       <div class="menu-footer">
         <div class="menu-price">$${parseFloat(m.Price).toFixed(2)} <span>USD</span></div>
         <div style="display:flex;gap:6px">
-          <button class="btn btn-ghost btn-xs" onclick="toast('Editing ${m.Name.replace(/'/g,'`')}…')">Edit</button>
-          <button class="btn btn-danger btn-xs" onclick="toast('Item removed','#b43232')">Remove</button>
+          <button class="btn btn-ghost btn-xs" onclick="editMenuItem(${m.ItemID})">Edit</button>
+          <button class="btn btn-danger btn-xs" onclick="removeMenuItem(${m.ItemID},'${m.Name.replace(/'/g,"\\'")}')">Remove</button>
         </div>
       </div>
     </div>
   </div>`).join('');
+}
+
+async function removeMenuItem(id, name){
+  if(!confirm(`Are you sure you want to remove ${name}?`)) return;
+  try {
+    const r = await fetch(`${API}/menu/${id}`, { method: 'DELETE' });
+    const d = await r.json();
+    if(r.ok) {
+      toast('Item removed successfully');
+      loadMenu(); // refresh
+    } else {
+      toast(d.error || 'Failed to remove', '#b43232');
+    }
+  } catch(e) {
+    toast(e.message, '#b43232');
+  }
+}
+
+function editMenuItem(id) {
+  const item = allMenu.find(m => m.ItemID === id);
+  if(!item) return;
+  // Fill modal
+  document.getElementById('edit-mi-id').value = item.ItemID;
+  document.getElementById('edit-mi-name').value = item.Name;
+  document.getElementById('edit-mi-price').value = item.Price;
+  document.getElementById('edit-mi-desc').value = item.Description || '';
+  document.getElementById('edit-mi-avail').checked = item.IsAvailable;
+  openModal('m-edit-menu');
+}
+
+async function saveEditMenu() {
+  const id = document.getElementById('edit-mi-id').value;
+  const body = {
+    Name: document.getElementById('edit-mi-name').value,
+    Price: parseFloat(document.getElementById('edit-mi-price').value),
+    Description: document.getElementById('edit-mi-desc').value,
+    IsAvailable: document.getElementById('edit-mi-avail').checked
+  };
+  try {
+    const r = await fetch(`${API}/menu/${id}`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body)
+    });
+    if(r.ok) {
+      closeModal('m-edit-menu');
+      toast('Item updated');
+      loadMenu();
+    } else {
+      const d = await r.json();
+      toast(d.error || 'Update failed', '#b43232');
+    }
+  } catch(e) {
+    toast(e.message, '#b43232');
+  }
+}
+
+async function handleAddMenu() {
+  const body = {
+    RestaurantID: parseInt(document.getElementById('mi-rest').value),
+    Name: document.getElementById('mi-name').value,
+    Price: parseFloat(document.getElementById('mi-price').value),
+    Description: document.getElementById('mi-desc').value,
+  };
+  try {
+    const r = await fetch(`${API}/menu`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body)
+    });
+    if(r.ok) {
+      closeModal('m-add-menu');
+      toast('Item added');
+      loadMenu();
+    } else {
+      const d = await r.json();
+      toast(d.error || 'Failed to add', '#b43232');
+    }
+  } catch(e) {
+    toast(e.message, '#b43232');
+  }
 }
 
 // ── LOAD: USERS ───────────────────────────────────────────
@@ -893,6 +3183,27 @@ checkDB();
 loadStats();
 loadDashOrders();
 loadDashRests();
+initImages();
 </script>
-</body>
-</html>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
