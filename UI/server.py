@@ -1,16 +1,3 @@
-# ================================================================
-# Food Delivery - Python Flask Backend
-# Azure SQL Database compatible (replaces server.js)
-#
-# REQUIREMENTS:
-#   pip install flask flask-cors pyodbc python-dotenv
-#
-# SETUP:
-#   1. Copy .env.example to .env and fill in your Azure SQL details
-#   2. Run:  python server.py
-#   3. Open: http://localhost:3000
-# ================================================================
-
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import pyodbc
@@ -23,21 +10,20 @@ app = Flask(__name__, static_folder="public")
 CORS(app)
 
 # ── DB CONNECTION STRING ──────────────────────────────────────
-# Azure SQL uses ODBC Driver 18 for SQL Server
 def get_conn():
+    driver = "{ODBC Driver 18 for SQL Server}" 
+    
     conn_str = (
-        "DRIVER={ODBC Driver 18 for SQL Server};"
-        f"SERVER={os.getenv('DB_HOST')};"        # e.g. yourserver.database.windows.net
+        f"DRIVER={driver};"
+        f"SERVER={os.getenv('DB_HOST')};"
         f"DATABASE={os.getenv('DB_NAME', 'FoodDeliveryDB')};"
         f"UID={os.getenv('DB_USER')};"
         f"PWD={os.getenv('DB_PASSWORD')};"
-        "Encrypt=yes;"                            # Required by Azure SQL
-        "TrustServerCertificate=no;"             # Required by Azure SQL
+        "Encrypt=yes;" # Added for Azure SQL security
+        "TrustServerCertificate=no;" # Added for Azure SQL security
         "Connection Timeout=30;"
     )
     return pyodbc.connect(conn_str)
-
-
 def rows_to_dict(cursor):
     """Convert pyodbc rows to a list of dicts using column names."""
     columns = [col[0] for col in cursor.description]
@@ -299,5 +285,5 @@ def feedback():
 # ── START ─────────────────────────────────────────────────────
 if __name__ == "__main__":
     port = int(os.getenv("SERVER_PORT", 5000))
-    print(f"\n✅  Server running at http://localhost:{port}\n")
+    print("\n✅  Server running at https://food-delivery-app-dcd4c7h2c8hecrcm.germanywestcentral-01.azurewebsites.net/\n")
     app.run(host="0.0.0.0", port=port, debug=True)
